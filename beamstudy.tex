@@ -1,0 +1,127 @@
+%\documentclass[aps,prstab,showpac,twocolumn]{revtex4-1}  
+\documentclass[aps,prstab,onecolumn,preprint,nofootinbib]{revtex4-1}
+
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{indentfirst}
+\usepackage{rotating}
+\usepackage{moreverb}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\topmargin}{0in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\rightmargin}{0.0in}
+
+\makeatletter
+
+\begin{document}
+
+\title{Studies of Particle Motions During Slow Resonant Extraction}
+\author{Chong Shik Park, James Amundson, Leo Michelotti, and Vladimir Nagaslaev}
+\affiliation{Fermi National Accelerator Laboratory, PO Box 500, Batavia, IL 60510}
+\date{\today}
+
+\begin{abstract}
+We present here 
+%The Mu2e experiment at Fermilab requires the acceleration and transport of intense proton beams, and the delivery of stable and uniform particle spills to the production target. To meet the experimental requirement, particles will be slowly extracted from the Delivery Ring to the external beamline. Using Synergia2, we have performed multi-particle tracking simulations of the third-integer resonant extraction in the Delivery Ring, including space charge effects as well as physical beamline elements and apertures. With a suitable ramp profile of tune-quadrupoles, we modeled a uniform spill structure. In order to minimize beam losses which are critical for efficient extractions, we have implemented a number of features, such as apertures in beamline elements, septum plane alignments. The RF Knockout (RFKO) technique, which excites particles transversely, is employed as a spill regulation system. Combined with a feedback system, it assists in fine-tuning the spill uniformity. Simulation studies have been carried out to optimize the RFKO feedback scheme, which will be helpful in designing the spill regulation system. 
+\end{abstract}
+
+\pacs{}
+\maketitle
+
+\setcounter{tocdepth}{5}
+
+%\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\label{sec:intro}Introduction}
+
+\clearpage
+\section{\label{sec:bump}Phasespace Corrections with Dynamic Bumps}
+
+In the previous paper, we discussed that a septum foil plane should be aligned with particles' $x^{\prime}$ coordinates. This alignment can reduce particle losses due to crossing the plane from outside to inside the field region or vice versa. However, particles' $x^{\prime}$ coordinates are chaging in time when the separatrix are being squeezed during the whole extraction period. These induce misalignments of the septum foil plane with respect to $x^{\prime}$s, and result in increasing of beam losses in time. Moreover, one can expect that an angular spread of extracted particles at the entrance of the septum will be large. 
+
+\begin{figure*}[tbh!]
+  \begin{center}
+    \includegraphics[width=.45\textwidth]{img/20140109-00.png}
+    \caption{\label{fig:bump1}Schematic drawing of the external beamline with 4 dynamic bumps.}
+  \end{center}
+\end{figure*}
+
+In order to mitigate these effects, orbit corrections are applied using 4 dynamic angle bumps. Fig.~\ref{fig:bump1} shows a schematic drawing of 4 bump locations in the extraction beamline. 2 bumps are located at the upstream of septa, and the other 2 are at the downstream. 
+
+
+
+\begin{figure*}[tbh!]
+  \begin{center}
+    \includegraphics[width=.45\textwidth]{img/20140123-00.png}
+    \caption{\label{fig:bump2}Strength changes of dynamic bumps in time.}
+  \end{center}
+\end{figure*}
+
+\begin{figure*}[tbh!]
+  \begin{center}
+    \subfigure[Without Dynamic Bumps]{
+      \includegraphics[width=.45\textwidth]{img/20140203-00.png}
+      \label{fig:bumpps1}}
+    \subfigure[With Dynamic Bumps]{
+      \includegraphics[width=.45\textwidth]{img/20140203-01.png}
+      \label{fig:bumpps2}}
+    \caption{\label{fig:bump3}Phasespace changes in time with/without dynamic bumps.}
+  \end{center}
+\end{figure*}
+
+\begin{figure*}[tbh!]
+  \begin{center}
+    \subfigure[Without Dynamic Bumps]{
+      \includegraphics[width=.45\textwidth]{img/20140206-02.png}
+      \label{fig:bumpps3}}
+    \subfigure[With Dynamic Bumps]{
+      \includegraphics[width=.45\textwidth]{img/20140206-03.png}
+      \label{fig:bumpps4}}
+    \caption{\label{fig:bump4}Footprints of extracted particles with/without dynamic bumps.}
+  \end{center}
+\end{figure*}
+
+\begin{figure*}[tbh!]
+  \begin{center}
+    \subfigure[Without Dynamic Bumps]{
+      \includegraphics[width=.45\textwidth]{img/20140203-06.png}
+      \label{fig:bumploss1}}
+    \subfigure[With Dynamic Bumps]{
+      \includegraphics[width=.45\textwidth]{img/20140203-07.png}
+      \label{fig:bumploss2}}
+    \caption{\label{fig:bump5}Particle losses in time with/without dynamic bumps.}
+  \end{center}
+\end{figure*}
+
+\section{\label{sec:loss}Tracking of Particle Losses}
+
+
+
+\section{\label{sec:emit}Emittance Growth Rates with RFKO Beam Heating}
+
+\section{\label{sec:rfko}RFKO Beam Distribution Function}
+
+\section{\label{sec:arrival}Arrival Time Distribution}
+
+\section{\label{sec:conclusion}Conclusion}
+
+\section{\label{thanks}Acknowledgments}
+
+\begin{thebibliography}{77}
+
+
+\end{thebibliography}
+
+\end{document}
