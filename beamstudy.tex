@@ -49,7 +49,18 @@ We present here
 \clearpage
 \section{\label{sec:bump}Phasespace Corrections with Dynamic Bumps}
 
-In the previous paper, we discussed that a septum foil plane should be aligned with particles' $x^{\prime}$ coordinates. This alignment can reduce particle losses due to crossing the plane from outside to inside the field region or vice versa. However, particles' $x^{\prime}$ coordinates are chaging in time when the separatrix are being squeezed during the whole extraction period. These induce misalignments of the septum foil plane with respect to $x^{\prime}$s, and result in increasing of beam losses in time. Moreover, one can expect that an angular spread of extracted particles at the entrance of the septum will be large. 
+In the previous paper, we discussed that a septum foil plane should be aligned with particles' $x^{\prime}$ coordinates when they are entering the field region of the septum. This alignment of the septum foil plane alogn with $x^{\prime}$s should be optimized to reduce particle losses due to crossing the plane from outside to inside the field region or vice versa. However, particles' angle coordinates are changing in time when a separatrix is being squeezed during an extraction period. 
+Fig.~\ref{fig:bump0} shows unstable particles measured at the entrance of the first septum in normalized phase space coordinates for 4 different stages of extraction. Particle streams are entering the septum field region by crossing the vertical line (color:purple), and their coordinates are changing during the extraction.
+Therefore, the alignment is only valid for a few turns at the beginning, and there will be misalignments of the septum foil plane with respect to $x^{\prime}$s later. These result in increasing of beam losses in time. Moreover, one can expect that an angular spread of extracted particles at the entrance of the septum will be large.
+
+\begin{figure*}[tbh!]
+  \begin{center}
+    \includegraphics[width=.45\textwidth]{img/ufp.png}
+    \caption{\label{fig:bump0}Normalized phase space plots of particles around separatrices.}
+  \end{center}
+\end{figure*}
+
+
 
 \begin{figure*}[tbh!]
   \begin{center}
@@ -58,9 +69,33 @@ In the previous paper, we discussed that a septum foil plane should be aligned w
   \end{center}
 \end{figure*}
 
-In order to mitigate these effects, orbit corrections are applied using 4 dynamic angle bumps. Fig.~\ref{fig:bump1} shows a schematic drawing of 4 bump locations in the extraction beamline. 2 bumps are located at the upstream of septa, and the other 2 are at the downstream. 
 
+In order to mitigate these effects, orbit corrections are applied using 4 dynamic angle bumps. Fig.~\ref{fig:bump1} shows a schematic drawing of 4 dynamic bump locations in the extraction beamline. 2 bumps are located at the upstream of septa, and the other 2 are at the downstream. Upstream bumps kick particles so that outgoing particles' angles are aligned at the entrance end of the first septum during the entire extraction period. Then, downstream bumps will kick them back to original positions.
 
+Using simple Bump strengths, $\theta_{i}$ for $i=1,2,3,4$, are given by
+\begin{equation}
+  \begin{split}
+  \theta_{1}(t) & = \sqrt{\frac{\beta_{s}}{\beta_{1}}}
+               \frac{\sin(\psi_{s} - \psi_{2})}
+                    {\sin(\psi_{2} - \psi_{1})}
+               \left( - \Delta x_{s}^{\prime} (t) \right),
+  \;\;\;
+  \theta_{2}(t) = \sqrt{\frac{\beta_{s}}{\beta_{2}}}
+               \frac{\sin(\psi_{s} - \psi_{1})}
+                    {\sin(\psi_{2} - \psi_{1})}
+               \Delta x_{s}^{\prime} (t), \\
+  \theta_{3}(t) & = \sqrt{\frac{\beta_{s}}{\beta_{3}}}
+               \frac{\sin(\psi_{s} - \psi_{4})}
+                    {\sin(\psi_{4} - \psi_{3})}
+               \Delta x_{s}^{\prime} (t),
+  \;\;\;\;\;\;\;\;\;\;
+  \theta_{4}(t) = \sqrt{\frac{\beta_{s}}{\beta_{4}}}
+               \frac{\sin(\psi_{s} - \psi_{3})}
+                    {\sin(\psi_{4} - \psi_{3})}
+               \left( - \Delta x_{s}^{\prime} (t) \right),
+  \end{split}
+\end{equation}
+where $\beta_{i}$'s are betatron functions at the septum($s$) and bumps($1,2,3,4$), $\psi_{i}$'s are betatron phase advances, and $\Delta x^{\prime}_{s} (t)$ is required changes of angle coordinates at the septum as a function of time. Fig.~\ref{fig:bump2} shows changes of bump strengths in time. Since particles' angles are aligned to the initial angle, bump strengths are zero at the beginning and are maximum at the end of extraction.
 
 \begin{figure*}[tbh!]
   \begin{center}
@@ -69,17 +104,8 @@ In order to mitigate these effects, orbit corrections are applied using 4 dynami
   \end{center}
 \end{figure*}
 
-\begin{figure*}[tbh!]
-  \begin{center}
-    \subfigure[Without Dynamic Bumps]{
-      \includegraphics[width=.45\textwidth]{img/20140203-00.png}
-      \label{fig:bumpps1}}
-    \subfigure[With Dynamic Bumps]{
-      \includegraphics[width=.45\textwidth]{img/20140203-01.png}
-      \label{fig:bumpps2}}
-    \caption{\label{fig:bump3}Phasespace changes in time with/without dynamic bumps.}
-  \end{center}
-\end{figure*}
+Before applying dynamic bumps, phase space of circulating particles are centered at the origin as shown in Fig.~\ref{fig:bump0}. As the separatrix is squeezed by increaing tune-quad strengths, phase space areas are shrinking in time and outgoing branches 
+
 
 \begin{figure*}[tbh!]
   \begin{center}
