@@ -6,6 +6,10 @@
 *.fls
 *.out
 *.toc
+*Notes.bib
+*~
+*.backup
+
 
 ## Intermediate documents:
 #*.dvi
