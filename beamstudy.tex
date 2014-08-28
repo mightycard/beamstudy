@@ -1,5 +1,6 @@
 %\documentclass[aps,prstab,showpac,twocolumn]{revtex4-1}  
-\documentclass[aps,prstab,onecolumn,preprint,nofootinbib]{revtex4-1}
+%\documentclass[aps,prstab,onecolumn,preprint]{revtex4-1}
+\documentclass[aps,prstab,onecolumn,preprint,endfloats]{revtex4-1}
 
 \usepackage{graphicx}
 \usepackage{epsfig}
@@ -21,6 +22,8 @@
 \setlength{\oddsidemargin}{0.0in}
 \setlength{\evensidemargin}{0.0in}
 \setlength{\rightmargin}{0.0in}
+
+\linespread{0.956}
 
 \makeatletter
 
@@ -47,61 +50,72 @@ We present here
 \section{\label{sec:intro}Introduction}
 
 \clearpage
-\section{\label{sec:bump}Phasespace Corrections with Dynamic Bumps}
 
-In the previous paper~\cite{mu2e}, we discussed that a septum foil plane should be aligned with particles' entrance angles at the septum because of its finite length.
-This alignment of the septum foil plane should be optimized in the way to reduce particle losses due to crossing the plane from outside to inside the field region or vice versa.
+\section{\label{sec:bump}Local Orbit Corrections with Dynamic Bumps}
+
+In the previous paper~\cite{mu2e}, we discussed that a septum foil plane should be aligned with particles' entrance angles to the septum because of its finite length.
+This alignment of the septum foil plane should be optimized in the manner of reducing particle losses due to crossing the plane from outside to inside the field region or vice versa.
 In the Delivery Ring, however, the septum is placed at a zero dispersion section, and all shrinking separatrices are always centered at origin during an entire extraction period.
-These yield that the Hardt condition, a condition to arrange separatrix geometries to superimpose them for different momenta, cannot be fullfiled.
+These yield that the Hardt condition, a condition to arrange separatrix geometries by superimposing them for different momenta, cannot be fullfiled.
 Consequently, particles' angle coordinates at the entrance of the first septum are varying in time.
 
-\begin{figure*}[tbh!]
-  \begin{center}
-    \subfigure[Without Dynamic Bumps]{
-      \includegraphics[width=.45\textwidth]{img/bump40.png}
-      \label{fig:bump00}}
-    \subfigure[With Dynamic Bumps]{
-      \includegraphics[width=.45\textwidth]{img/bump41.png}
-      \label{fig:bump01}}
-    \caption{\label{fig:bump0}Phase space plots of particles for 4 different extraction stages: (a) before and (b) after applying dynamic bump corrections}
-  \end{center}
+\begin{figure*}[!htbp]
+  \subfigure[Before applying dynamic bumps]{
+    \includegraphics[width=.45\textwidth]{img/bump40.png}
+    \label{fig:bump00}}
+  \subfigure[After applying dynamic bumps]{
+    \includegraphics[width=.45\textwidth]{img/bump41.png}
+    \label{fig:bump01}}
+  \caption{\label{fig:bump0}Phase space plots of particles for 4 different extraction stages (100, 10000, 20000, 30000 turns): (a) before and (b) after applying dynamic bump corrections}
 \end{figure*}
 
 Fig.~\ref{fig:bump00} shows a phase space of particles for 4 different extraction stages.
-The grey shadows are defined as the septum shadow regions in which particles will be lost [ref:M.Pullia].
-Streams of unstable particles on the rightmost separatrix branch for each stage are entering the septum field region by crossing the vertical line (color:purple).
-As the separatrix is squeezed, these branch arms are moving upward.
-The septum foil plane is aligned with an initial extraction stage.
-Therefore, the alignment is only valid for a few turns at the beginning, and there will be permanent misalignments of the septum foil plane with respect to $x^{\prime}$'s later.
-These result that more particles are entering the septum shadow region (color:grey shadow), and they will be lost.
+As the separatrix is squeezed by increasing tune-quad strengths, unstable particles are streamed along branches of separatrices. 
+The septum field region is formed on the [left] side of the vertical line (color: purple) at $x=10$ mm. 
+The gray shadows on the plot are defined as the septum shadow regions in which particles will be considered as lost~\cite{m.pullia}.
+Streams of unstable particles on the [leftmost] separatrix branch for each stage are entering the septum field region by crossing the septum foil line.
+However, their entering angles are moving [upward] during the extraction processes.
+An angle of the septum foil plane is aligned with an initial extraction stage.
+Therefore, the alignment is only valid for few turns at the beginning, and there will be continuous misalignments of the septum foil plane later.
+These result that more particles are entering the [upper] septum shadow region (color:gray shadow), and they will be lost.
 Variations of angle coordinates at the septum entrance will eventually be seen at the experiment target with large horizontal angular spread of extracted beams.
 
-In order to mitigate these effects, orbit corrections are applied using 4 dynamic angle bumps.
-Using 4 dynamic bumps, we could align separatrices to reduce anglular deviations at the septum.
+In our case with a zero dispersion at the setum, there are two possible ways to have same entrance angle of the beam to the septum for different extraction stages.
+One method is to compesnate the beam angle by rotating the separatrix. This could be achievable by changing phases of two harmonic sextupole circuits.
+The phase contributions of each harmonic circuit differs by about 90 deg, and these make phase adjusments doable.
+However, particles' entrance angles for different extraction stages are same only if their $x$ coordinates are equal to the horizontal position of the septum foil at the entrance, $x_{ES}$.
+In other words, their angles beyond $x_{ES}$ will be diverged.
+These results in an asymmetric angular spread of extracted beams.
+The other solution is to apply local orbit corrections using dynamic angle bumps throughout the spill.
+With this method, extracted particles will have a symmetric angluar spread during the spill.
+For resonant extraction from the Delivery ring, we choose the dynamic bump scheme.
+As an alternative backup solution to prepare a failure of local bump corrections, the harmonics sextupole magnets and their power supplies are designed to preserve ramp capabilities.
+In this paper, we will only discuss how local bump corrections are implemented.
+
+\begin{figure}[!htbp]
+  \includegraphics[width=.45\textwidth]{img/20140109-00.png}
+  \caption{\label{fig:bump1}Schematic drawing of the external beamline with 4 local orbit bumps.}
+\end{figure}
+
+Using 4 dynamic bumps, we could align separatrices to reduce anglular deviations at the entrance of the septum.
 Fig.~\ref{fig:bump1} shows a schematic drawing of 4 dynamic bump locations in the extraction beamline.
 2 bumps are located at the upstream of septa, and the other 2 are at the downstream.
-Upstream bumps kick particles so that outgoing particles' angles are aligned at the entrance end of the first septum during the entire extraction period.
+Upstream bumps kick particles so that the base of separatirces are aligned during the entire extraction period.
 Then, downstream bumps will kick them back to original orbits.
-
-
-\begin{figure*}[tbh!]
-  \begin{center}
-    \includegraphics[width=.45\textwidth]{img/20140109-00.png}
-    \caption{\label{fig:bump1}Schematic drawing of the external beamline with 4 dynamic bumps.}
-  \end{center}
-\end{figure*}
+Fig.~\ref{fig:bump01} shows a phase space plot of particles for different extraction stages after applying local orbit corrections.
+All trainglular distrbutions of particles are well aligned on theire bases.
+The [leftmost] branch arms are extended to the same direction, i.e., particles are entering the septum field region with the same angle.
 
 Strengths of local orbit corrections can be easily obtained by applying the transfer matrix method with initial closed orbit conditions.
-Using the condition that the closed orbit is zero outside bumps, their strengths, $\theta_{i}$ for $i=1,2,3,4$, are given by
-\begin{widetext}
+Using the condition that the closed orbit is zero outside bumps, their strengths in time, $\theta_{i}(t)$ for $i=1,2,3,4$, are given by
 \begin{equation}
   \begin{split}
   \theta_{1}(t) & = \sqrt{\frac{\beta_{s}}{\beta_{1}}}
                \frac{\sin(\psi_{s} - \psi_{2})}
                     {\sin(\psi_{2} - \psi_{1})}
                \left( - \Delta x_{s}^{\prime} (t) \right),
-  \;\;\;
-  \theta_{2}(t) = \sqrt{\frac{\beta_{s}}{\beta_{2}}}
+  \\ %\;\;\;
+  \theta_{2}(t) & = \sqrt{\frac{\beta_{s}}{\beta_{2}}}
                \frac{\sin(\psi_{s} - \psi_{1})}
                     {\sin(\psi_{2} - \psi_{1})}
                \Delta x_{s}^{\prime} (t), \\
@@ -109,62 +123,46 @@ Using the condition that the closed orbit is zero outside bumps, their strengths
                \frac{\sin(\psi_{s} - \psi_{4})}
                     {\sin(\psi_{4} - \psi_{3})}
                \Delta x_{s}^{\prime} (t),
-  \;\;\;\;\;\;\;\;\;\;
-  \theta_{4}(t) = \sqrt{\frac{\beta_{s}}{\beta_{4}}}
+  \\ %\;\;\;\;\;\;\;\;\;\;
+  \theta_{4}(t) & = \sqrt{\frac{\beta_{s}}{\beta_{4}}}
                \frac{\sin(\psi_{s} - \psi_{3})}
                     {\sin(\psi_{4} - \psi_{3})}
                \left( - \Delta x_{s}^{\prime} (t) \right),
   \end{split}
 \end{equation}
-\end{widetext}
-where $\beta_{i}$'s are betatron functions at the septum($s$) and bumps($1,2,3,4$), $\psi_{i}$'s are betatron phase advances, and $\Delta x^{\prime}_{s} (t)$ is required changes of angle coordinates at the septum entrance as a function of time.
-Fig.~\ref{fig:bump2} shows changes of bump strengths in time.
+where $\beta_{i}$'s are betatron functions at the septum($s$) and bumps($1,2,3,4$), $\psi_{i}$'s are betatron phase advances, and $\Delta x^{\prime}_{s} (t)$ is the required angle kicks of particles at the septum entrance as a function of time.
+Fig.~\ref{fig:bump2} shows changes of bump strengths vs.~time.
 Since particles' entrance angles to the septum are aligned to the initial extraction stage, bump strengths are zero at the beginning and are maximum at the end of extraction.
 
-\begin{figure*}[tbh!]
-  \begin{center}
-    \includegraphics[width=.45\textwidth]{img/20140123-00.png}
-    \caption{\label{fig:bump2}Strength changes of dynamic bumps in time.}
-  \end{center}
+\begin{figure}[!htbp]
+  \includegraphics[width=.45\textwidth]{img/20140123-00.png}
+  \caption{\label{fig:bump2}Strengths changes of dynamic bumps in time.}
+\end{figure}
+
+\begin{figure*}[!htbp]
+  \subfigure[Before applying dynamic bumps]{
+    \includegraphics[width=.45\textwidth]{img/20140206-02.png}
+    \label{fig:bump30}}
+  \subfigure[After applying dynamic bumps]{
+    \includegraphics[width=.45\textwidth]{img/20140206-03.png}
+    \label{fig:bump31}}
+  \caption{\label{fig:bump3}Footprints of extracted particles with/without dynamic bumps.}
 \end{figure*}
 
-Before applying dynamic bumps, phase space of circulating particles are centered at the origin as shown in Fig.~\ref{fig:bump0}.
-As the separatrix is squeezed by increaing tune-quad strengths, phase space areas are shrinking in time and outgoing branches.
-
-
-\begin{figure*}[tbh!]
-  \begin{center}
-    \subfigure[Without Dynamic Bumps]{
-      \includegraphics[width=.45\textwidth]{img/20140206-02.png}
-      \label{fig:bumpps3}}
-    \subfigure[With Dynamic Bumps]{
-      \includegraphics[width=.45\textwidth]{img/20140206-03.png}
-      \label{fig:bumpps4}}
-    \caption{\label{fig:bump4}Footprints of extracted particles with/without dynamic bumps.}
-  \end{center}
-\end{figure*}
-
-\begin{figure*}[tbh!]
-  \begin{center}
-    \subfigure[Without Dynamic Bumps]{
-      \includegraphics[width=.45\textwidth]{img/20140203-06.png}
-      \label{fig:bumploss1}}
-    \subfigure[With Dynamic Bumps]{
-      \includegraphics[width=.45\textwidth]{img/20140203-07.png}
-      \label{fig:bumploss2}}
-    \caption{\label{fig:bump5}Particle losses in time with/without dynamic bumps.}
-  \end{center}
-\end{figure*}
+\begin{figure}[!htbp]
+  \includegraphics[width=.45\textwidth]{img/20140203-06.png}
+  \caption{\label{fig:bump4}Particle losses in time with/without dynamic bumps.}
+\end{figure}
 
 \clearpage
 
 \section{\label{sec:loss}Tracking of Particle Losses}
 
-\section{\label{sec:emit}Emittance Growth Rates with RFKO Beam Heating}
+\section{\label{sec:arrival}Arrival Time Distribution}
 
 \section{\label{sec:rfko}RFKO Beam Distribution Function}
 
-\section{\label{sec:arrival}Arrival Time Distribution}
+\section{\label{sec:emit}Emittance Growth Rates with RFKO Beam Heating}
 
 \section{\label{sec:conclusion}Conclusion}
 
@@ -175,7 +173,12 @@ As the separatrix is squeezed by increaing tune-quad strengths, phase space area
   \bibitem{mu2e}
   C.S. Park, ``Tracking Simulation of the Third-Integer Resonant Extraction for the Fermilab Mu2e Experiment,'' submitted to PRST-AB.
 
+  \bibitem{m.pullia}
+  M. Pullia, thesis
+
 \end{thebibliography}
+
+\clearpage
 
 \end{document}
 
