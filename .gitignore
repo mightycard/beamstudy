@@ -10,6 +10,9 @@
 *~
 *.backup
 *sage*
+*.fgx
+*.tbx
+*.vdx
 
 ## Intermediate documents:
 #*.dvi
