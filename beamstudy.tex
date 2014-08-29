@@ -1,6 +1,6 @@
 %\documentclass[aps,prstab,showpac,twocolumn]{revtex4-1}  
 %\documentclass[aps,prstab,onecolumn,preprint]{revtex4-1}
-\documentclass[aps,prstab,onecolumn,preprint,endfloats]{revtex4-1}
+\documentclass[aps,prstab,onecolumn,preprint,endfloats,11pt]{revtex4-1}
 
 \usepackage{graphicx}
 \usepackage{epsfig}
@@ -59,7 +59,7 @@ In the Delivery Ring, however, the septum is placed at a zero dispersion section
 These yield that the Hardt condition, a condition to arrange separatrix geometries by superimposing them for different momenta, cannot be fullfiled.
 Consequently, particles' angle coordinates at the entrance of the first septum are varying in time.
 
-\begin{figure*}[!htbp]
+\begin{figure*}[!tbp]
   \subfigure[Before applying dynamic bumps]{
     \includegraphics[width=.45\textwidth]{img/bump40.png}
     \label{fig:bump00}}
@@ -86,28 +86,30 @@ The phase contributions of each harmonic circuit differs by about 90 deg, and th
 However, particles' entrance angles for different extraction stages are same only if their $x$ coordinates are equal to the horizontal position of the septum foil at the entrance, $x_{ES}$.
 In other words, their angles beyond $x_{ES}$ will be diverged.
 These results in an asymmetric angular spread of extracted beams.
-The other solution is to apply local orbit corrections using dynamic angle bumps throughout the spill.
-With this method, extracted particles will have a symmetric angluar spread during the spill.
-For resonant extraction from the Delivery ring, we choose the dynamic bump scheme.
-As an alternative backup solution to prepare a failure of local bump corrections, the harmonics sextupole magnets and their power supplies are designed to preserve ramp capabilities.
-In this paper, we will only discuss how local bump corrections are implemented.
 
-\begin{figure}[!htbp]
+The other solution is to apply local orbit corrections using angle bumps throughout the spill.
+With this method, extracted particles will have a symmetric angluar spread during the spill as well as same entrance angles.
+For resonant extraction from the Delivery ring, we choose a local orbit correction scheme.
+Particles' orbit in the extraction beamline will be dynamically corrected with 4 bump magnets.
+As a backup solution to prepare a failure of local bump corrections, the harmonics sextupole magnets and their power supplies are designed to preserve ramp capabilities.
+In this paper, we will only discuss how local bump corrections are implemented, and detailed specifications for magnets and power supplies are presented in the Mu2e TDR~\cite{tdr}.
+
+\begin{figure}[!tbp]
   \includegraphics[width=.45\textwidth]{img/20140109-00.png}
   \caption{\label{fig:bump1}Schematic drawing of the external beamline with 4 local orbit bumps.}
 \end{figure}
 
 Using 4 dynamic bumps, we could align separatrices to reduce anglular deviations at the entrance of the septum.
-Fig.~\ref{fig:bump1} shows a schematic drawing of 4 dynamic bump locations in the extraction beamline.
+Fig.~\ref{fig:bump1} is a schematic drawing of 4 dynamic bump locations in the extraction beamline.
 2 bumps are located at the upstream of septa, and the other 2 are at the downstream.
 Upstream bumps kick particles so that the base of separatirces are aligned during the entire extraction period.
 Then, downstream bumps will kick them back to original orbits.
-Fig.~\ref{fig:bump01} shows a phase space plot of particles for different extraction stages after applying local orbit corrections.
-All trainglular distrbutions of particles are well aligned on theire bases.
+Fig.~\ref{fig:bump01} presents a phase space plot of particles for different extraction stages after applying local orbit corrections.
+All trainglular distrbutions of particles are well aligned on their bases.
 The [leftmost] branch arms are extended to the same direction, i.e., particles are entering the septum field region with the same angle.
 
 Strengths of local orbit corrections can be easily obtained by applying the transfer matrix method with initial closed orbit conditions.
-Using the condition that the closed orbit is zero outside bumps, their strengths in time, $\theta_{i}(t)$ for $i=1,2,3,4$, are given by
+With the condition that the closed orbit is zero outside bumps, their strengths in time, $\theta_{i}(t)$ for $i=1,2,3,4$, are given by
 \begin{equation}
   \begin{split}
   \theta_{1}(t) & = \sqrt{\frac{\beta_{s}}{\beta_{1}}}
@@ -134,12 +136,16 @@ where $\beta_{i}$'s are betatron functions at the septum($s$) and bumps($1,2,3,4
 Fig.~\ref{fig:bump2} shows changes of bump strengths vs.~time.
 Since particles' entrance angles to the septum are aligned to the initial extraction stage, bump strengths are zero at the beginning and are maximum at the end of extraction.
 
-\begin{figure}[!htbp]
+\begin{figure}[!tbp]
   \includegraphics[width=.45\textwidth]{img/20140123-00.png}
   \caption{\label{fig:bump2}Strengths changes of dynamic bumps in time.}
 \end{figure}
 
-\begin{figure*}[!htbp]
+%footprint of extracted particles
+
+
+
+\begin{figure*}[!tbp]
   \subfigure[Before applying dynamic bumps]{
     \includegraphics[width=.45\textwidth]{img/20140206-02.png}
     \label{fig:bump30}}
@@ -169,6 +175,9 @@ Since particles' entrance angles to the septum are aligned to the initial extrac
 \section{\label{thanks}Acknowledgments}
 
 \begin{thebibliography}{77}
+
+  \bibitem{tdr}
+  Mu2e Technical Design Documentation
 
   \bibitem{mu2e}
   C.S. Park, ``Tracking Simulation of the Third-Integer Resonant Extraction for the Fermilab Mu2e Experiment,'' submitted to PRST-AB.
