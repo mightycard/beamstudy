@@ -35,23 +35,21 @@
 \date{\today}
 
 \begin{abstract}
-We present here 
-%The Mu2e experiment at Fermilab requires the acceleration and transport of intense proton beams, and the delivery of stable and uniform particle spills to the production target. To meet the experimental requirement, particles will be slowly extracted from the Delivery Ring to the external beamline. Using Synergia2, we have performed multi-particle tracking simulations of the third-integer resonant extraction in the Delivery Ring, including space charge effects as well as physical beamline elements and apertures. With a suitable ramp profile of tune-quadrupoles, we modeled a uniform spill structure. In order to minimize beam losses which are critical for efficient extractions, we have implemented a number of features, such as apertures in beamline elements, septum plane alignments. The RF Knockout (RFKO) technique, which excites particles transversely, is employed as a spill regulation system. Combined with a feedback system, it assists in fine-tuning the spill uniformity. Simulation studies have been carried out to optimize the RFKO feedback scheme, which will be helpful in designing the spill regulation system. 
+
 \end{abstract}
 
 \pacs{}
-\maketitle
+%\maketitle
 
-\setcounter{tocdepth}{5}
+\setcounter{tocdepth}{7}
 
 %\tableofcontents
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\label{sec:intro}Introduction}
-
-\clearpage
-
+%\section{\label{sec:intro}Introduction}
+\date{\today}
 \section{\label{sec:bump}Local Orbit Corrections with Dynamic Bumps}
+
+\subsection{\label{sec:bump0}Septum Entrance Angle}
 
 In the previous paper~\cite{mu2e}, we discussed that a septum foil plane should be aligned with particles' entrance angles to the septum because of its finite length.
 This alignment of the septum foil plane should be optimized in the manner of reducing particle losses due to crossing the plane from outside to inside the field region or vice versa.
@@ -61,26 +59,26 @@ Consequently, particles' angle coordinates at the entrance of the first septum a
 
 \begin{figure*}[!tbp]
   \subfigure[Before applying dynamic bumps]{
-    \includegraphics[width=.45\textwidth]{img/bump40.png}
+    \includegraphics[width=.45\textwidth]{img/fig_bump1a.png}
     \label{fig:bump00}}
   \subfigure[After applying dynamic bumps]{
-    \includegraphics[width=.45\textwidth]{img/bump41.png}
+    \includegraphics[width=.45\textwidth]{img/fig_bump1b.png}
     \label{fig:bump01}}
-  \caption{\label{fig:bump0}Phase space plots of particles for 4 different extraction stages (100, 10000, 20000, 30000 turns): (a) before and (b) after applying dynamic bump corrections}
+  \caption{\label{fig:bump0}Phase space plots of particles for 4 different extraction stages (100(blue), 6000(red), 20000(yellow), and 30000(cyan) turns): (a) before and (b) after applying dynamic bump corrections. (Color: Red shaded part is the septum field region, and grey shaded one is the septum shadow regions.)}
 \end{figure*}
 
-Fig.~\ref{fig:bump00} shows a phase space of particles for 4 different extraction stages.
+Fig.~\ref{fig:bump00} shows a phase space of particles for 4 different extraction stages (100, 6000, 20000, and 30000 turns).
 As the separatrix is squeezed by increasing tune-quad strengths, unstable particles are streamed along branches of separatrices. 
-The septum field region is formed on the [left] side of the vertical line (color: purple) at $x=10$ mm. 
-The gray shadows on the plot are defined as the septum shadow regions in which particles will be considered as lost~\cite{m.pullia}.
+The septum field region (color: red shaded) is formed on the [left] side of the vertical line (color: purple) at $x=10$ mm. 
+The gray shaded regions on the plot are defined as the septum shadow regions in which particles will be considered as lost~\cite{m.pullia}.
 Streams of unstable particles on the [leftmost] separatrix branch for each stage are entering the septum field region by crossing the septum foil line.
 However, their entering angles are moving [upward] during the extraction processes.
 An angle of the septum foil plane is aligned with an initial extraction stage.
 Therefore, the alignment is only valid for few turns at the beginning, and there will be continuous misalignment of the septum foil plane later.
-These result that more particles are entering the [upper] septum shadow region (color:gray shadow), and they will be lost.
+These result that more particles are entering the [upper] septum shadow region (color:gray shaded), and they will be lost.
 Variations of angle coordinates at the septum entrance will eventually be seen at the experiment target with large horizontal angular spread of extracted beams.
 
-In our case with a zero dispersion at the septum, there are two possible ways to have same entrance angle of the beam to the septum for different extraction stages.
+In our case with a zero dispersion at the septum, two possible ways can be considered to have same entrance angle of the beam to the septum for different extraction stages.
 One method is to compensate the beam angle by rotating the separatrix. This could be achievable by changing phases of two harmonic sextupole circuits.
 The phase contributions of each harmonic circuit differs by about 90 deg, and these make phase adjustments doable.
 However, particles' entrance angles for different extraction stages are same only if their $x$ coordinates are equal to the horizontal position of the septum foil at the entrance, $x_{ES}$.
@@ -94,8 +92,10 @@ Particles' orbit in the extraction beamline will be dynamically corrected with 4
 As a backup solution to prepare a failure of local bump corrections, the harmonics sextupole magnets and their power supplies are designed to preserve ramp capabilities.
 In this paper, we will only discuss how local bump corrections are implemented, and detailed specifications for magnets and power supplies are presented in the Mu2e TDR~\cite{tdr}.
 
+\subsection{\label{sec:bump1}Dynamic Bumps}
+
 \begin{figure}[!tbp]
-  \includegraphics[width=.45\textwidth]{img/20140109-00.png}
+  \includegraphics[width=.45\textwidth]{img/fig_bump2}
   \caption{\label{fig:bump1}Schematic drawing of the external beamline with 4 local orbit bumps.}
 \end{figure}
 
@@ -140,9 +140,11 @@ From Eqn.~\ref{eqn:bump}, we observed that strengths of bump magnets are getting
 Since each magnet is bounded between two quadrupoles, there are limitations in minimizing their strengths.
 
 \begin{figure}[!tbp]
-  \includegraphics[width=.45\textwidth]{img/20140123-00.png}
+  \includegraphics[width=.45\textwidth]{img/fig_bump3}
   \caption{\label{fig:bump2}Strengths changes of dynamic bumps in time.}
 \end{figure}
+
+\subsection{\label{sec:bump2}Simulation Results}
 
 In Fig.~\ref{fig:bump3}, footprints of extracted particles at the entrance of the first septum are presented in phase space coordinates.
 These are accumulations of extracted particles  with/without local orbit corrections throughout the entire extraction period.
@@ -150,7 +152,7 @@ Particles' coordinates are shifted to make them centered at the origin.
 Particles (color:blue) survived from lost or scattered by septum components will be transferred to the 2nd septum, Lambertson magnet, and C-magnet.
 They will be then extracted to the external beamline.
 Particles (color:red) formed a thin line on the [right] hit the septum foil with 50$\mu$m at the entrance during the spill.
-Some particles (color:purple) intersect the septum foil plane by entering the septum shadow region (color:gray shadow).
+Some particles (color:purple) intersect the septum foil plane by entering the septum shadow region (color:gray shaded).
 The last two kinds of particles are removed and considered as lost.
 The horizontal phase space ellipses, which match the beam with 99.9\% containment, are plotted alongside.
 
@@ -163,19 +165,19 @@ Therefore, the chromatic tune spread causes a little spread of angle coordinates
 
 \begin{figure*}[!tbp]
   \subfigure[Before applying dynamic bumps]{
-    \includegraphics[width=.45\textwidth]{img/20140206-02.png}
+    \includegraphics[width=.45\textwidth]{img/fig_bump4a}
     \label{fig:bump30}}
   \subfigure[After applying dynamic bumps]{
-    \includegraphics[width=.45\textwidth]{img/20140206-03.png}
+    \includegraphics[width=.45\textwidth]{img/fig_bump4b}
     \label{fig:bump31}}
-  \caption{\label{fig:bump3}Footprints of extracted particles with/without dynamic bumps.}
+  \caption{\label{fig:bump3}Footprints of extracted particles with/without dynamic bumps. (Color: Blue dots are to-be-extracted particles, red dots are lost particles by intersecting the septum foil plande, and black dots are lost particles by hitting the septum. Red shaded part is the septum field region, and grey shaded one is the septum shadow regions.)}
 \end{figure*}
 
 As described in the previous paper~\cite{mu2e}, Synergia2 has a septum aperture to detect particle losses by hitting a septum head or crossing a septum foil plane.
 The rotation of the septum plane is taken into account in the model.
 Fig.~\ref{fig:bump4} shows extraction simulation results of particle losses with/without local orbit corrections during the spill.
 While ``hit\_septum1'' and ``hit\_septum2'' are losses by hitting the entrance of septum elements, ``cross\_septum1'' and ``cross\_septum2'' are losses by crossing septum foil planes for the 1st and 2nd septa, respectively.
-``entire\_losses'' are a sum of turn-by-turn particle losses for each case.
+``total\_losses'' are a sum of turn-by-turn particle losses for each case.
 
 Without dynamic angle corrections, septum planes are aligned only to the beginning of the extraction stage.
 Therefore, beam losses are rising in time due to mismatching of the alignment (see Fig.~\ref{fig:bump40}).
@@ -185,28 +187,36 @@ We also observed that losses at the 2nd septum with dynamic bumps are decreased.
 
 \begin{figure*}[!tbp]
   \subfigure[Before applying dynamic bumps]{
-    \includegraphics[width=.45\textwidth]{img/20140203-06.png}
+    \includegraphics[width=.45\textwidth]{img/fig_bump5a}
     \label{fig:bump40}}
   \subfigure[After applying dynamic bumps]{
-    \includegraphics[width=.45\textwidth]{img/20140203-07.png}
+    \includegraphics[width=.45\textwidth]{img/fig_bump5b}
     \label{fig:bump41}}
   \caption{\label{fig:bump4}Particle losses in time with/without dynamic bumps.}
 \end{figure*}
 
-\section{\label{sec:loss}Tracking of Particle Losses}
+
+%\section{\label{sec:loss}Tracking of Particle Losses}
+
+%\section{\label{sec:arrival}Arrival Time Profile of the Extracted Beam}
+
+%\section{\label{sec:rfko}RFKO Beam Distribution Function}
+
+%\section{\label{sec:emit}Emittance Growth Rates with RFKO Beam Heating}
+
+%\section{\label{sec:conclusion}Conclusion}
+
+%\section{\label{thanks}Acknowledgments}
 
 
-\clearpage
+\appendix
 
-\section{\label{sec:arrival}Arrival Time Distribution}
+\section{\label{sec:shadow}The Septum Shadow Region}
 
-\section{\label{sec:rfko}RFKO Beam Distribution Function}
+\subsection{Outside the Septum Field Region}
 
-\section{\label{sec:emit}Emittance Growth Rates with RFKO Beam Heating}
+\subsection{Inside the Septum Field Region}
 
-\section{\label{sec:conclusion}Conclusion}
-
-\section{\label{thanks}Acknowledgments}
 
 \begin{thebibliography}{77}
 
