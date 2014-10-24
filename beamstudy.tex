@@ -205,14 +205,41 @@ Previous studies show that the chance are approximately $< 2 \%$. Synergia handl
 %figure: MARS configuration
 %figure: beamloss result
 
-
+\clearpage
 \section{\label{sec:arrival}Arrival Time Profile}
 
-Arrival time is developed as a basis for future work predicting spill shapes and the influence of power supply ripples
-This is regarded as an essential foundation for future work on the prediction of spill shapes, the influence of power supply ripple and possibly improvements in the efficiency of feedback systems for stabilizing the spill.
+\begin{figure*}[!tbp]
+  \subfigure[Quad strengths and beam intensities]{
+    \includegraphics[width=.45\textwidth]{img/fig_arriva3a}
+    \label{fig:arrival30}}
+  \subfigure[particles' $x$ coordinates and their distribution vs. arrival time]{
+    \includegraphics[width=.45\textwidth]{img/fig_arriva3b}
+    \label{fig:arrival31}}
+  \caption{\label{fig:arrival3}Arrival Time.}
+\end{figure*}
+
+\textcolor{blue}{simulation procedure}
+\begin{itemize}
+  \item chagne the tune ramp profile to observe arrival time of extracted particles at the first setpum
+  \item for 3 different stages, stop tune ramp during $\approx 1 \%$ spill duration time ($\approx 320$ turns)
+  \item back to the origial tune, and stop tune ramp again
+  \item extract particles for 1,000 turns more
+  \item measure extracted particles' $x$ corrdinates and arrival time (turn number) at the first septum
+  \item turn 2,000, 15,000, and 25,000 turns
+\end{itemize}
 
 
+\textcolor{red}{lifted from M.Pullia's Thesis}
+\begin{itemize}
+  \item Definitions of arrival time and transit time
+  \item transit time: time between a particle becoming unstable and reaching the electrostatic septum.
+  \item Transit time is developed as a basis for future work predicting spill shapes and the influence of power supply ripples.
+  This is regarded as an essential foundation for future work on the prediction of spill shapes, the influence of power supply ripple and possibly improvements in the efficiency of feedback systems for stabilizing the spill.
+  \item The transit time formulae can be used to estimate the temporal structure of the extracted beam, that is the number of particles reaching the electrostatic septum as a function of time, when the beam is slowly brought into the resonance. This will be expressed as the density in time $P(t)$, defined such that $P(t)dt$ is the number of particles that reach the ES between $t$ and $t+dt$. This function depends on the extraction method and can thsu be used to compare different extraction techniques.
+\end{itemize}
 
+
+\clearpage
 \section{\label{sec:rfko}Particle Motions with RFKO Beam Heating}
 
 \subsection{\label{sec:dist}Beam Distribution Function}
