@@ -1,6 +1,6 @@
 %\documentclass[aps,prstab,showpac,twocolumn]{revtex4-1}  
-\documentclass[aps,prstab,onecolumn,preprint]{revtex4-1}
-%\documentclass[aps,prstab,onecolumn,preprint,endfloats,11pt]{revtex4-1}
+%\documentclass[aps,prstab,onecolumn,preprint]{revtex4-1}
+\documentclass[aps,prstab,onecolumn,preprint,endfloats,11pt]{revtex4-1}
 
 \usepackage{graphicx}
 \usepackage{epsfig}
@@ -15,7 +15,6 @@
 \usepackage{indentfirst}
 \usepackage{rotating}
 \usepackage{moreverb}
-
 
 
 \linespread{1.0}
@@ -194,19 +193,46 @@ We also observed that losses at the 2nd septum with dynamic bumps are decreased.
   \caption{\label{fig:bump4}Particle losses in time with and without dynamic bumps.}
 \end{figure*}
 
+\clearpage
 
-\section{\label{sec:beamloss}Beam Loss Tracking}
+\section{\label{tracking}Particle Tracking Simulations}
 
-After a bunch of particles enters a electrostatic septum element, a few particles will be have a chance scattered by a septum foil.
-Previous studies show that the chance are approximately $< 2 \%$. Synergia handle these particles as a beamloss. 
+The Hamiltonian for the third-integer resonance model based on the perturbation theory can be expressed as 
+\begin{equation}
+  H = \Delta \nu \cdot a^{*} a - i g a^{3} + i g^{*} a^{*} + \cdots,
+\label{eqn:hamiltonian1}
+\end{equation}
+where $a$ is a normalized horizontal phase space coordinates, $[x + i (\alpha x + \beta x^{\prime})] / \sqrt{2 \beta}$, with the Courant-Snyder lattice functions, and $g$ is  a linear functional of the sextupole field strength distribution,
+\begin{equation}
+  g = \frac{i}{6 \sqrt{2}} \frac{1}{4 \pi} \sum_{\text{sextupoles}}
+      \Bigg[
+        \frac{B^{\prime\prime} l}{(B\rho)} \beta^{3/2}
+        e^{-i 3(\psi - \Delta \nu \theta)}
+      \Bigg].
+\end{equation}
+By substituting normalized coordinates, $(X, X^{\prime}) = (x/\sqrt{\beta}, (\alpha x + \beta x^{\prime}) / \sqrt{\beta})$, to Eq.~\ref{eqn:hamiltonian1}, with $g = |g| e^{i \Psi}$, one could get
+\begin{equation}
+  H = \frac{\Delta \nu}{2} \left( X^{2} + X^{\prime2} \right)
+    + \frac{1}{\sqrt{2}} |g|
+      \Big[
+        \left( X^{3} - 3 X X^{\prime 2} \right) \sin{\Psi}
+      + \left( 3 X^{2} X^{\prime} - X^{\prime 3} \right) \cos{\Psi}
+      \Big]
+\label{eqn:hamiltonian2}
+\end{equation}
 
-%TODO
-%MARS parameters
-%figure: MARS configuration
-%figure: beamloss result
+With multiplying by $6 \pi$ and a proper $\Psi$ value ($\pi$), Eq.~\ref{eqn:hamiltonian2} becomes a well-known Kobayashi Hamiltonian for three consecutive turns,
+\begin{equation}
+  H = \frac{\epsilon}{2} \left( X^{2} + X^{\prime2} \right)
+    + \frac{S}{4} \left( 3 X^{2} X^{\prime} - X^{\prime 3} \right),
+\end{equation}
+where $\epsilon = 6\pi \Delta \nu$, and $S = 12\sqrt{2} \pi |g| \cdot \text{sgn}(\Delta \nu)$. 
+
+
+
 
 \clearpage
-\section{\label{sec:arrival}Arrival Time Profile}
+\subsection{\label{sec:arrival}Arrival Time Profile}
 
 \begin{figure*}[!tbp]
   \subfigure[Quad strengths and beam intensities]{
@@ -231,12 +257,25 @@ Previous studies show that the chance are approximately $< 2 \%$. Synergia handl
 
 \textcolor{red}{lifted from M.Pullia's Thesis}
 \begin{itemize}
+  \item The Kobayashi hamiltonian has been drived by approximating the phase space displacement of a particle for every third revolution, and considering the time of 3 turns as the infinitesimal increment of time.
   \item Definitions of arrival time and transit time
   \item transit time: time between a particle becoming unstable and reaching the electrostatic septum.
   \item Transit time is developed as a basis for future work predicting spill shapes and the influence of power supply ripples.
   This is regarded as an essential foundation for future work on the prediction of spill shapes, the influence of power supply ripple and possibly improvements in the efficiency of feedback systems for stabilizing the spill.
   \item The transit time formulae can be used to estimate the temporal structure of the extracted beam, that is the number of particles reaching the electrostatic septum as a function of time, when the beam is slowly brought into the resonance. This will be expressed as the density in time $P(t)$, defined such that $P(t)dt$ is the number of particles that reach the ES between $t$ and $t+dt$. This function depends on the extraction method and can thsu be used to compare different extraction techniques.
 \end{itemize}
+
+
+\subsection{\label{sec:beamloss}Beam Loss Tracking}
+
+After a bunch of particles enters a electrostatic septum element, a few particles will be have a chance scattered by a septum foil.
+Previous studies show that the chance are approximately $< 2 \%$. Synergia handle these particles as a beamloss. 
+
+%TODO
+%MARS parameters
+%figure: MARS configuration
+%figure: beamloss result
+
 
 
 \clearpage
