@@ -52,7 +52,7 @@ There are many interesting beam dynamics problems in third-integer resonant extr
 In the previous paper~\cite{mu2e}, we discussed that a septum foil plane should be aligned with particles' entrance angles to the septum.
 This alignment of the septum foil plane should be optimized in the manner of reducing particle losses due to crossing the plane from outside to inside a septum field region or vice versa.
 In the Delivery Ring, however, the septum is placed at a zero dispersion section, and all shrinking separatrices are always centered at origin during extraction.
-These yield that the Hardt condition, a condition to arrange separatrix geometries by superimposing them for different momenta, cannot be fulfilled~\cite{m.pullia}.
+These yield that the Hardt condition, a condition to arrange separatrix geometries by superimposing them for different momenta, cannot be fulfilled~\cite{pullia}.
 Consequently, particles' angle coordinates at the entrance of the first septum are not aligned with a fixed septum foil plane.
 
 \begin{figure*}[!tbp]
@@ -197,12 +197,14 @@ We also observed that losses at the 2nd septum with dynamic bumps are decreased.
 
 \section{\label{tracking}Particle Tracking Simulations}
 
-The Hamiltonian for the third-integer resonance model based on the perturbation theory can be expressed as 
+\subsection{\label{model}Simplified Resonance Model and Kobayashi Hamiltonian}
+
+With a complex, normalized, horizontal phasespace coordinates, $a = [x + i (\alpha x + \beta x^{\prime})] / \sqrt{2 \beta}$, the Hamiltonian for the third-integer resonance model based on the perturbation theory can be derived as~\cite{preliminary}
 \begin{equation}
   H = \Delta \nu \cdot a^{*} a - i g a^{3} + i g^{*} a^{*} + \cdots,
 \label{eqn:hamiltonian1}
 \end{equation}
-where $a$ is a normalized horizontal phase space coordinates, $[x + i (\alpha x + \beta x^{\prime})] / \sqrt{2 \beta}$, with the Courant-Snyder lattice functions, and $g$ is  a linear functional of the sextupole field strength distribution,
+where $g$ is  a linear functional of the sextupole field strength distribution:
 \begin{equation}
   g = \frac{i}{6 \sqrt{2}} \frac{1}{4 \pi} \sum_{\text{sextupoles}}
       \Bigg[
@@ -210,28 +212,46 @@ where $a$ is a normalized horizontal phase space coordinates, $[x + i (\alpha x 
         e^{-i 3(\psi - \Delta \nu \theta)}
       \Bigg].
 \end{equation}
-By substituting normalized coordinates, $(X, X^{\prime}) = (x/\sqrt{\beta}, (\alpha x + \beta x^{\prime}) / \sqrt{\beta})$, to Eq.~\ref{eqn:hamiltonian1}, with $g = |g| e^{i \Psi}$, one could get
+By changing variables to real, normalized coordinates, $(X, X^{\prime}) = (x/\sqrt{\beta}, (\alpha x + \beta x^{\prime}) / \sqrt{\beta})$, in Eq.~(\ref{eqn:hamiltonian1}), with $g = |g| e^{i \Psi}$, the Hamiltonian has the new form,
+\begin{widetext}
 \begin{equation}
   H = \frac{\Delta \nu}{2} \left( X^{2} + X^{\prime2} \right)
-    + \frac{1}{\sqrt{2}} |g|
+    + \frac{|g|}{\sqrt{2}}
       \Big[
         \left( X^{3} - 3 X X^{\prime 2} \right) \sin{\Psi}
       + \left( 3 X^{2} X^{\prime} - X^{\prime 3} \right) \cos{\Psi}
-      \Big]
+      \Big].
 \label{eqn:hamiltonian2}
 \end{equation}
-
-With multiplying by $6 \pi$ and a proper $\Psi$ value ($\pi$), Eq.~\ref{eqn:hamiltonian2} becomes a well-known Kobayashi Hamiltonian for three consecutive turns,
+\end{widetext}
+The orientation of the separatrix at the entrance of the first septum is formed an upright triangle in the normalized phase space by setting $\Psi = \pi$. With multiplying by $6 \pi$ to Eq.~(\ref{eqn:hamiltonian2}), a well-known Kobayashi Hamiltonian can be obtained
 \begin{equation}
-  H = \frac{\epsilon}{2} \left( X^{2} + X^{\prime2} \right)
+  \bar{H} = \frac{\epsilon}{2} \left( X^{2} + X^{\prime2} \right)
     + \frac{S}{4} \left( 3 X^{2} X^{\prime} - X^{\prime 3} \right),
+\label{eqn:kobayashi}
 \end{equation}
-where $\epsilon = 6\pi \Delta \nu$, and $S = 12\sqrt{2} \pi |g| \cdot \text{sgn}(\Delta \nu)$. 
+where $\epsilon = 6\pi \Delta \nu$, and a normalized sextupole strength, $S = 12\sqrt{2} \pi |g| \cdot \text{sgn}(\Delta \nu)$. The Kobayashi Hamiltonian describes motions of particles in the phase space coordinates for every three turn.
 
+The first term in Eq.~\ref{eqn:kobayashi} prescribes the unperturbed linear motion of particles, and their motions are describes as circles in the normalized phase space. For Mu2e resonant extraction, $\Delta \nu = \nu_{x} - 29/3$, thus the machine tune is set to below resonance. This yields that particles inside the separatrix are rotating conterclockwise direction. The second term contributes the perturbed motion of particles associated with harmonic sextupoles. Due to this term, stable particles are bounded by the triangular separatrix, while unstable particles are streaming away along the outgoing separatrix branches. More detailed discussions about the Kobayashi Hamiltonian can be found in references~\cite{pullia}.
 
+With Eq.~(\ref{eqn:kobayashi}), equations of motion are given by
+\begin{equation}
+ \begin{split}
+  \frac{dX}{dt} & = \frac{\partial \bar{H}}{\partial X^{\prime}}
+                  = \frac{3}{4} S
+                    \left(
+                      X^{2} + \frac{4}{3} \frac{\epsilon}{S} X^{\prime}
+                    - X^{\prime 2}
+                    \right) \\
+  \frac{dX^{\prime}}{dt} & = - \frac{\partial \bar{H}}{\partial X}
+                           = - \frac{3}{2} S \left( X^{\prime}
+                            + \frac{2}{3} \frac{\epsilon}{S} \right) X.
+ \end{split}
+\label{eqn:motion}
+\end{equation}
+The unit of the time in Eq.~(\ref{eqn:motion}) is three cosecutive turns, i.e., $t = 3 T_{\text{rev}}$, where $T_{\text{rev}} \simeq 1.6 \mu$sec.
+Compared to the total spill time (54 msec), three turns (3 $\times$ 1.6 $\mu$sec) can be considered as an infinitesimal time increment, therefore the particle motion is adiabatic. 
 
-
-\clearpage
 \subsection{\label{sec:arrival}Arrival Time Profile}
 
 \begin{figure*}[!tbp]
@@ -255,15 +275,7 @@ where $\epsilon = 6\pi \Delta \nu$, and $S = 12\sqrt{2} \pi |g| \cdot \text{sgn}
 \end{itemize}
 
 
-\textcolor{red}{lifted from M.Pullia's Thesis}
-\begin{itemize}
-  \item The Kobayashi hamiltonian has been drived by approximating the phase space displacement of a particle for every third revolution, and considering the time of 3 turns as the infinitesimal increment of time.
-  \item Definitions of arrival time and transit time
-  \item transit time: time between a particle becoming unstable and reaching the electrostatic septum.
-  \item Transit time is developed as a basis for future work predicting spill shapes and the influence of power supply ripples.
-  This is regarded as an essential foundation for future work on the prediction of spill shapes, the influence of power supply ripple and possibly improvements in the efficiency of feedback systems for stabilizing the spill.
-  \item The transit time formulae can be used to estimate the temporal structure of the extracted beam, that is the number of particles reaching the electrostatic septum as a function of time, when the beam is slowly brought into the resonance. This will be expressed as the density in time $P(t)$, defined such that $P(t)dt$ is the number of particles that reach the ES between $t$ and $t+dt$. This function depends on the extraction method and can thsu be used to compare different extraction techniques.
-\end{itemize}
+
 
 
 \subsection{\label{sec:beamloss}Beam Loss Tracking}
@@ -295,22 +307,10 @@ Previous studies show that the chance are approximately $< 2 \%$. Synergia handl
 % \subsection{Outside the Septum Field Region}
 % \subsection{Inside the Septum Field Region}
 
-
-\begin{thebibliography}{77}
-
-  \bibitem{tdr}
-  Mu2e Technical Design Documentation
-
-  \bibitem{mu2e}
-  C.S. Park, ``Tracking Simulation of the Third-Integer Resonant Extraction for the Fermilab Mu2e Experiment,'' submitted to PRST-AB.
-
-  \bibitem{ipac11}
-  V. Nagaslaev, J.F. Amundson, J.A. Johnstone, C.S. Park, and S.J. Werkema, ``Third Integer Resonance Slow Extraction Using RFKO at High Space Charge,'' in IPAC 2011 proceeding.
-
-  \bibitem{m.pullia}
-  M. Pullia, thesis
-
+\begin{thebibliography}
+ \include{beamstudy.bbl}
 \end{thebibliography}
+
 
 \clearpage
 
