@@ -205,13 +205,13 @@ With a complex, normalized, horizontal phasespace coordinates, $a = [x + i (\alp
 \label{eqn:hamiltonian1}
 \end{equation}
 where $g$ is  a linear functional of the sextupole field strength distribution:
-\begin{equation}
+\begin{equation*}
   g = \frac{i}{6 \sqrt{2}} \frac{1}{4 \pi} \sum_{\text{sextupoles}}
       \Bigg[
         \frac{B^{\prime\prime} l}{(B\rho)} \beta^{3/2}
         e^{-i 3(\psi - \Delta \nu \theta)}
       \Bigg].
-\end{equation}
+\end{equation*}
 By changing variables to real, normalized coordinates, $(X, X^{\prime}) = (x/\sqrt{\beta}, (\alpha x + \beta x^{\prime}) / \sqrt{\beta})$, in Eq.~(\ref{eqn:hamiltonian1}), with $g = |g| e^{i \Psi}$, the Hamiltonian has the new form,
 \begin{widetext}
 \begin{equation}
@@ -226,33 +226,51 @@ By changing variables to real, normalized coordinates, $(X, X^{\prime}) = (x/\sq
 \end{widetext}
 The orientation of the separatrix at the entrance of the first septum is formed an upright triangle in the normalized phase space by setting $\Psi = \pi$. With multiplying by $6 \pi$ to Eq.~(\ref{eqn:hamiltonian2}), a well-known Kobayashi Hamiltonian can be obtained
 \begin{equation}
-  \bar{H} = \frac{\epsilon}{2} \left( X^{2} + X^{\prime2} \right)
+  H_{K} = \frac{\epsilon}{2} \left( X^{2} + X^{\prime2} \right)
     + \frac{S}{4} \left( 3 X^{2} X^{\prime} - X^{\prime 3} \right),
 \label{eqn:kobayashi}
 \end{equation}
-where $\epsilon = 6\pi \Delta \nu$, and a normalized sextupole strength, $S = 12\sqrt{2} \pi |g| \cdot \text{sgn}(\Delta \nu)$. The Kobayashi Hamiltonian describes motions of particles in the phase space coordinates for every three turn.
+where $\epsilon = 6\pi \Delta \nu$, and a normalized sextupole strength, $S = 12\sqrt{2} \pi |g| \cdot \text{sgn}(\Delta \nu)$. 
 
-The first term in Eq.~\ref{eqn:kobayashi} prescribes the unperturbed linear motion of particles, and their motions are describes as circles in the normalized phase space. For Mu2e resonant extraction, $\Delta \nu = \nu_{x} - 29/3$, thus the machine tune is set to below resonance. This yields that particles inside the separatrix are rotating conterclockwise direction. The second term contributes the perturbed motion of particles associated with harmonic sextupoles. Due to this term, stable particles are bounded by the triangular separatrix, while unstable particles are streaming away along the outgoing separatrix branches. More detailed discussions about the Kobayashi Hamiltonian can be found in references~\cite{pullia}.
+The Kobayashi Hamiltonian describes motions of particles in the phase space coordinates for every three turn.
+The first term of $H_{K}$ prescribes the unperturbed linear motion of particles, and their motions are described as circles in the normalized phase space. For Mu2e resonant extraction, $\Delta \nu = \nu_{x} - 29/3$, thus the machine tune is set to below resonance. This yields that particles inside the separatrix are rotating conterclockwise direction. The second term contributes the perturbed motion of particles associated with harmonic sextupoles. Due to this term, stable particles are bounded by the triangular separatrix, while unstable particles are streaming away along the outgoing separatrix branches. 
+%More detailed discussions about the Kobayashi Hamiltonian can be found in references~\cite{pullia}.
 
 With Eq.~(\ref{eqn:kobayashi}), equations of motion are given by
 \begin{equation}
  \begin{split}
-  \frac{dX}{dt} & = \frac{\partial \bar{H}}{\partial X^{\prime}}
-                  = \frac{3}{4} S
+  \frac{dX}{dt} & = \frac{\partial H_{K}}{\partial X^{\prime}}
+                  = \epsilon X^{\prime} + \frac{3}{4} S
                     \left(
-                      X^{2} + \frac{4}{3} \frac{\epsilon}{S} X^{\prime}
-                    - X^{\prime 2}
-                    \right) \\
-  \frac{dX^{\prime}}{dt} & = - \frac{\partial \bar{H}}{\partial X}
-                           = - \frac{3}{2} S \left( X^{\prime}
-                            + \frac{2}{3} \frac{\epsilon}{S} \right) X.
+                      X^{2} - X^{\prime 2}
+                    \right), \\
+  \frac{dX^{\prime}}{dt} & = - \frac{\partial H_{K}}{\partial X}
+                           = - \epsilon X - \frac{3}{2} S X X^{\prime}.
+%   \frac{dX}{dt} & = \frac{\partial H_{K}}{\partial X^{\prime}}
+%                   = \frac{3}{4} S
+%                     \left(
+%                       X^{2} + \frac{4}{3} \frac{\epsilon}{S} X^{\prime}
+%                     - X^{\prime 2}
+%                     \right), \\
+%   \frac{dX^{\prime}}{dt} & = - \frac{\partial H_{K}}{\partial X}
+%                            = - \frac{3}{2} S \left( X^{\prime}
+%                             + \frac{2}{3} \frac{\epsilon}{S} \right) X.
  \end{split}
 \label{eqn:motion}
 \end{equation}
-The unit of the time in Eq.~(\ref{eqn:motion}) is three cosecutive turns, i.e., $t = 3 T_{\text{rev}}$, where $T_{\text{rev}} \simeq 1.6 \mu$sec.
+The unit of the time in Eq.~(\ref{eqn:motion}) is three cosecutive turns, i.e., $t = 1 [\times 3 \; \text{turns}] = 3 T_{\text{rev}}$[sec], where $T_{\text{rev}} \simeq 1.6 \mu$sec.
 Compared to the total spill time (54 msec), three turns (3 $\times$ 1.6 $\mu$sec) can be considered as an infinitesimal time increment, therefore the particle motion is adiabatic. 
 
+Using the simpified resonance model described above and Synergia, we perform and compare results of particle tracking simulations which will be shown in next subsections. We measure arrival time of particles streaming to the septum plane, and we track particles which are scattered by septum foils.
+
 \subsection{\label{sec:arrival}Arrival Time Profile}
+
+For the resonant extraction scheme, one of the most important part is to achieve stable spills during the entire extraction. However, it is quite possible to have unwanted spill fluctuations in the presence of magnet power supply ripples. Moreover, the RFKO feedback system to regulate the spill rate for the Mu2e experiment requires precise predictions of those fluctuations. 
+In this study, we measure the arrival time which is defined as 
+
+
+In the reference \cite{pullia}, analytical expressions for arrival time were derived. With these formulars, arrival time can be calculated for constant resonance or slowly varying resonance. However, we realized that it is hard to predict arrival time analytically when particles are close to stable fixed points. 
+
 
 \begin{figure*}[!tbp]
   \subfigure[Quad strengths and beam intensities]{
