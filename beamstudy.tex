@@ -204,7 +204,7 @@ With a complex, normalized, horizontal phasespace coordinates, $a = [x + i (\alp
   H = \Delta \nu \cdot a^{*} a - i g a^{3} + i g^{*} a^{*} + \cdots,
 \label{eqn:hamiltonian1}
 \end{equation}
-where $g$ is  a linear functional of the sextupole field strength distribution:
+where $\Delta \nu$ is the difference between the horizontal and resonant tunes, and $g$ is  a linear functional of the sextupole field strength distribution:
 \begin{equation*}
   g = \frac{i}{6 \sqrt{2}} \frac{1}{4 \pi} \sum_{\text{sextupoles}}
       \Bigg[
@@ -232,7 +232,7 @@ The orientation of the separatrix at the entrance of the first septum is formed 
 \end{equation}
 where $\epsilon = 6\pi \Delta \nu$, and a normalized sextupole strength, $S = 12\sqrt{2} \pi |g| \cdot \text{sgn}(\Delta \nu)$. 
 
-The Kobayashi Hamiltonian describes motions of particles in the phase space coordinates for every three turn.
+The Kobayashi Hamiltonian describes motions of particles in the phase space coordinates for every three turn~\cite{kobayashi}.
 The first term of $H_{K}$ prescribes the unperturbed linear motion of particles, and their motions are described as circles in the normalized phase space. For Mu2e resonant extraction, $\Delta \nu = \nu_{x} - 29/3$, thus the machine tune is set to below resonance. This yields that particles inside the separatrix are rotating conterclockwise direction. The second term contributes the perturbed motion of particles associated with harmonic sextupoles. Due to this term, stable particles are bounded by the triangular separatrix, while unstable particles are streaming away along the outgoing separatrix branches. 
 % discussions about the Kobayashi Hamiltonian can be found in references~\cite{pullia}.
 
@@ -261,11 +261,25 @@ With Eq.~(\ref{eqn:kobayashi}), equations of motion are given by
 The unit of the time in Eq.~(\ref{eqn:motion}) is three cosecutive turns, i.e., $t = 1 [\times 3 \; \text{turns}] = 3 T_{\text{rev}}$[sec], where $T_{\text{rev}} \simeq 1.6 \mu$sec.
 Compared to the total spill time (54 msec), three turns (3 $\times$ 1.6 $\mu$sec) can be considered as an infinitesimal time increment, therefore the particle motion is adiabatic. 
 
-Using the simpified resonance model described above and Synergia, we perform and compare results of particle tracking simulations which will be shown in next subsections. We measure arrival time of particles streaming to the septum plane, and we track particles which are scattered by septum foils.
+Using the simpified resonance model described above and accelerator simulation package, Synergia, we measure arrival time of particles streaming to the septum plane, perform tracking simulations for particles scattered by septum foils.
 
 \subsection{\label{sec:arrival}Arrival Time Profile}
 
-For the resonant extraction scheme, one of the most important part is to achieve stable spills during the entire extraction. However, it is quite possible to have unwanted spill fluctuations in the presence of magnet power supply ripples. Moreover, the RFKO feedback system to regulate the spill rate for the Mu2e experiment requires precise predictions of those fluctuations. 
+\textcolor{blue}{structure}
+\begin{itemize}
+  \item importance of stable spill
+  \item importance of arrival time (arrival time $\rightarrow$ predicting spill structure, temporal structure of extracted beam: the number of particles reaching the ES as a function of time)
+  \item previous work (M. Pullia)
+  \item How we measure arrival time using synergia (simulation procedure)
+  \item simulation results with figure
+  \item How we calculate arrival time analytically
+  \item compare two results
+  \item conclusion
+\end{itemize}
+
+For the resonant extraction scheme, one of the most important part is to achieve stable spills during the entire extraction. However, it is quite possible to have unwanted spill fluctuations in the presences of magnet imperfections or magnet power supply ripples. Moreover, the RFKO feedback system to regulate the spill rate for the Mu2e experiment requires precise predictions of those fluctuations. 
+
+\textcolor{red}{Importance of Arrivaltime}
 In this study, we measure the arrival time which is defined as 
 
 
@@ -295,8 +309,20 @@ In the reference \cite{pullia}, analytical expressions for arrival time were der
 
 
 
-
+\clearpage
 \subsection{\label{sec:beamloss}Beam Loss Tracking}
+
+\textcolor{blue}{structure II}
+\begin{itemize}
+  \item motivation: brief description of septum alignment and beam loss mechanism
+  \item what we do (beam loss tracking)
+  \item simulation procedure: syneriga $\rightarrow$ mars $\rightarrow$ synergia
+  \item simulation results I: phasespace plot for 0, 1, 2, 3 turns
+  \item analytical calculation description
+  \item analytical calculation results
+  \item conclusion: analysis
+\end{itemize}
+
 
 After a bunch of particles enters a electrostatic septum element, a few particles will be have a chance scattered by a septum foil.
 Previous studies show that the chance are approximately $< 2 \%$. Synergia handle these particles as a beamloss. 
