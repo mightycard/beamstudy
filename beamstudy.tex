@@ -265,25 +265,44 @@ Using the simpified resonance model described above and accelerator simulation p
 
 \subsection{\label{sec:arrival}Arrival Time Profile}
 
-\textcolor{blue}{structure}
-\begin{itemize}
-  \item importance of stable spill
-  \item importance of arrival time (arrival time $\rightarrow$ predicting spill structure, temporal structure of extracted beam: the number of particles reaching the ES as a function of time)
-  \item previous work (M. Pullia)
-  \item How we measure arrival time using synergia (simulation procedure)
-  \item simulation results with figure
-  \item How we calculate arrival time analytically
-  \item compare two results
-  \item conclusion
-\end{itemize}
+For the slow resonant extraction methods, one of the most important parts is to 
+maintain stable spills during the entire extraction. With the helps of optimal 
+tune-ramp profile and RFKO feedback system, multi-particle tracking simulations 
+using Synergia showed \mbox{$\pm 20\%$} variations in spill 
+structures~\cite{mu2e}. However, it is quite possible to have unwanted spill 
+fluctuations in the presences of magnet imperfections or magnet power supply 
+ripples. Moreover, the RFKO feedback system to regulate the spill rate for the 
+Mu2e experiment requires precise predictions of those fluctuations. 
 
-For the resonant extraction scheme, one of the most important part is to achieve stable spills during the entire extraction. However, it is quite possible to have unwanted spill fluctuations in the presences of magnet imperfections or magnet power supply ripples. Moreover, the RFKO feedback system to regulate the spill rate for the Mu2e experiment requires precise predictions of those fluctuations. 
+In this section, we will present arrival time measurements of particles using 
+tracking simulations. Arrival time is defined as a time difference profile of 
+particles from the unstable region to the septum field region. This is 
+called as the transit time in the reference~\cite{pullia}. As M. Pullia 
+suggested, this time profile could help to predict and provide behaviors of 
+spill structures under influences of magnet imperfections or power supply 
+ripples.
 
-\textcolor{red}{Importance of Arrivaltime}
-In this study, we measure the arrival time which is defined as 
+Three different Synergia simulations are prepared for measuring arrival times. 
+For up to 2000, 15,000, and 25,000 turns, the tune-quads are ramped with 
 
 
-In the reference \cite{pullia}, analytical expressions for arrival time were derived. With these formulars, arrival time can be calculated for constant resonance or slowly varying resonance. However, we realized that it is hard to predict arrival time analytically when particles are close to stable fixed points. 
+
+
+Analytical expresiontions for arrival time in the reference \cite{pullia} were 
+derived based on the Kobayashi Hamiltonian. With these formulas, arrival time 
+can be calculated for constant resonance or slowly varying resonance. 
+However, we realized that it is hard to predict arrival time analytically when 
+particles are close to stable fixed points. Particles' motions are strongly 
+bounded near the stable fixed points, and it takes long time to escape these 
+points.
+
+We also use the Kobayashi Hamiltonian method to calculate arrival times. Using 
+Eq.~(\ref{eqn:motion}), particle's motions are tracked for every three-turn 
+and their arrival times are calculated. For the one-to-one comparison, their 
+initial positions are set to same as those of Syneriga tracking simulations, 
+however, space charge effects are excluded for simplicity. 
+
+
 
 
 \begin{figure*}[!tbp]
@@ -295,18 +314,6 @@ In the reference \cite{pullia}, analytical expressions for arrival time were der
     \label{fig:arrival31}}
   \caption{\label{fig:arrival3}Arrival Time.}
 \end{figure*}
-
-\textcolor{blue}{simulation procedure}
-\begin{itemize}
-  \item chagne the tune ramp profile to observe arrival time of extracted particles at the first setpum
-  \item for 3 different stages, stop tune ramp during $\approx 1 \%$ spill duration time ($\approx 320$ turns)
-  \item back to the origial tune, and stop tune ramp again
-  \item extract particles for 1,000 turns more
-  \item measure extracted particles' $x$ corrdinates and arrival time (turn number) at the first septum
-  \item turn 2,000, 15,000, and 25,000 turns
-\end{itemize}
-
-
 
 
 \clearpage
@@ -351,8 +358,30 @@ Previous studies show that the chance are approximately $< 2 \%$. Synergia handl
 % \subsection{Outside the Septum Field Region}
 % \subsection{Inside the Septum Field Region}
 
-\begin{thebibliography}
- \include{beamstudy.bbl}
+\begin{thebibliography}{77}
+ %\include{beamstudy.bbl}
+  \bibitem{tdr}
+  Mu2e Technical Design Documentation
+
+  \bibitem{mu2e}
+  C.S. Park, ``Tracking Simulation of the Third-Integer Resonant Extraction for 
+the Fermilab Mu2e Experiment,'' submitted to PRST-AB.
+
+  \bibitem{ipac11}
+  V. Nagaslaev, J.F. Amundson, J.A. Johnstone, C.S. Park, and S.J. Werkema, 
+``Third Integer Resonance Slow Extraction Using RFKO at High Space Charge,'' in 
+IPAC 2011 proceeding.
+
+  \bibitem{preliminary}
+  L. Michelotti and J. Johnstone, ``Preliminaries Toward Studying Resonant 
+Extraction from
+the Debuncher,'' Technical Report, Fermilab, 2009. FERMILAB-FN-0842-APC-CD.
+
+  \bibitem{kobayashi}
+  Kobayashi paper
+
+  \bibitem{pullia}
+  M. Pullia, thesis
 \end{thebibliography}
 
 
