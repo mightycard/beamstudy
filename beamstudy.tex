@@ -29,11 +29,11 @@
 \date{\today}
 
 \begin{abstract}
-There are many interesting beam dynamics problems in third-integer resonant extraction. 
+We present beam dynamics simulation studies in third-integer resonant extraction at Fermi Mu2e experiment. Dynamic bumps are implemented for local orbit corrections in which septum entrance angle is controlled to reduce angular spread of extracted beams. Using Synergia, we perform particle tracking simulations to investigate arrival time profile of extracted particles and scattered particle distributions. We also discuss motions of particles with RFKO beam heating, which will help to understand spill regulations using RFKO feedback system.
 \end{abstract}
 
 \pacs{}
-%\maketitle
+\maketitle
 
 \setcounter{tocdepth}{7}
 
@@ -45,6 +45,7 @@ There are many interesting beam dynamics problems in third-integer resonant extr
 %need a table of all parameters of the extraction simulation, including dp/p
 
 
+\clearpage
 \section{\label{sec:bump}Local Orbit Corrections with Dynamic Bumps}
 
 \subsection{\label{sec:bump0}Septum Entrance Angle}
@@ -62,7 +63,7 @@ Consequently, particles' angle coordinates at the entrance of the first septum a
   \subfigure[After applying dynamic bumps]{
     \includegraphics[width=.45\textwidth]{img/fig_bump1b.png}
     \label{fig:bump01}}
-  \caption{\label{fig:bump0}Phase space plots of particles for 4 different extraction stages (turns 100(blue), 6000(red), 20000(yellow), and 30000(cyan)): (a) before and (b) after applying dynamic bump corrections. (Color: Red shaded part is the septum field region, and grey shaded one is the septum shadow regions.)}
+  \caption{\label{fig:bump0}Phase space plots of particles for 4 different extraction stages (turns 100(blue), 6000(red), 20000(yellow), and 30000(cyan)): (a) before and (b) after applying dynamic bump corrections. (Color: Red shaded part is the septum field region, and gray shaded one is the septum shadow regions.)}
 \end{figure*}
 
 Fig.~\ref{fig:bump00} shows a phase space of particles for four different extraction stages (turns 100, 6,000, 20,000, and 30,000).
@@ -73,7 +74,7 @@ Gray shaded regions on the plot are defined as septum shadow regions in which pa
 Streams of unstable particles on the [leftmost] separatrix branch for each extraction stage are entering the septum field region by crossing the septum foil line.
 However, their entering angles are moving [upward] during the extraction processes.
 An angle of the septum foil plane is aligned with an initial extraction stage.
-Therefore, the alignment is only valid for few turns at the beginning, and there will be continuous misalignment of the septum foil plane later.
+, the alignment is only valid for few turns at the beginning, and there will be continuous misalignment of the septum foil plane later.
 These result that more particles are entering the [upper] septum shadow region (color:gray shaded), and they will be lost eventually.
 Variations of angle coordinates at the septum entrance will be seen at the experiment target with a large horizontal angular spread of extracted beams.
 
@@ -168,7 +169,7 @@ Therefore, a chromatic tune spread causes a little spread of angle coordinates a
   \subfigure[After applying dynamic bumps]{
     \includegraphics[width=.45\textwidth]{img/fig_bump4b}
     \label{fig:bump31}}
-  \caption{\label{fig:bump3}Footprints of extracted particles with and without dynamic bumps. (Color: Blue dots are to-be-extracted particles, red dots are lost particles by intersecting the septum foil plane, and black dots are lost particles by hitting the septum. Red shaded part is the septum field region, and grey shaded one is the septum shadow regions.)}
+  \caption{\label{fig:bump3}Footprints of extracted particles with and without dynamic bumps. (Color: Blue dots are to-be-extracted particles, red dots are lost particles by intersecting the septum foil plane, and black dots are lost particles by hitting the septum. Red shaded part is the septum field region, and gray shaded one is the septum shadow regions.)}
 \end{figure*}
 
 As described in the previous paper~\cite{mu2e}, Synergia2 has a septum aperture to detect particle losses by hitting a septum head or crossing a septum foil plane.
@@ -263,22 +264,14 @@ Compared to the total spill time (54 msec), three turns (3 $\times$ 1.6 $\mu$sec
 
 Using the simplified resonance model described above and accelerator simulation package, Synergia, we measure arrival time of particles streaming to the septum plane, perform tracking simulations for particles scattered by septum foils.
 
-\clearpage
+
 \subsection{\label{sec:arrival}Arrival Time Profile}
 
 For the slow resonant extraction methods, one of the most important parts is to maintain stable spills during the entire extraction. With the help of optimal tune-ramp profile and RFKO feedback system, multi-particle tracking simulations using Synergia showed \mbox{$\pm 20\%$} variations in spill structures~\cite{mu2e}. However, it is quite possible to have unwanted spill fluctuations in the presences of magnet imperfections or magnet power supply ripples. Moreover, the RFKO feedback system to regulate the spill rate for the Mu2e experiment requires precise predictions of those fluctuations. 
 
-In this section, we will present arrival time measurements of particles using tracking simulations. Arrival time is defined as a transition time change of a particle from the unstable region to the septum field region. This is called as the transit time in the reference~\cite{pullia}. As M. Pullia suggested, the arrival time profile could help to predict and provide behaviors of spill structures under influences of magnetic field variations.
+In this section, we will discuss arrival time profiles of extracted particles using Synergia tracking simulations. An arrival time is defined as a transition time change of a particle from the unstable region to the septum field region. This is called as the transit time in the reference~\cite{pullia}. As M. Pullia suggested, the arrival time profile of extracted particles could help to predict and provide behaviors of spill structures under influences of magnetic field variations.
 
-
-Analytical expressions for arrival time(transit time) in the reference \cite{pullia} were derived based on equations of motion from the Kobayashi Hamiltonian. With these formulas, the transit times were given for constant resonance or slowly varying resonance. However, we realized that it is hard to predict arrival time with approximations used in ~\cite{pullia}, when particles are close to stable fixed points. Particles' motions are strongly bounded near the stable fixed points, and it takes long time to escape these points, and therefore, the transit time easily goes infinity.
-
-Synergia tracking simulations are performed to measure arrival times for extracted particles. 500k macro particles are initially injected and slowly extracted in the Delivery Ring. The optimal tune-quads ramp profile provides a constant slow spill. At a selected turn, tune-quads ramp are intentionally stopped, and their strengths are kept constant for about $\sim$1\% of the spill duration, roughly $\sim$300 turns. During the first constant ramp period, a small amount of beam could be extracted. After this period, strengths of tune-quads are restored to original settings and kept constant again. The second constant period is for about \textcolor{red}{500/1000} turns, which should be enough to see the whole transition to the septum field region. During the transition, the slice of affected particles are relatively small, so that particles inside the narrow separatrix shell are involved, and we record the arrival time for those particles. Since the arrival time depends on the extraction stage, we choose three different stages for measurement points: early ($\sim$2000 turn), middle ($\sim$15,000 turn), and close to the end ($\sim$25,000 turn). 500k macro particles in the initial beam is large enough to observe a smooth transition distribution.
-
-Fig.~\ref{fig:arrival11} shows quadrupole strengths vs.~turn for three different stages (top:early, middle:middle, and bottom:end stages). Dashed lines (color:blue) are beam intensities with a normal ramp profile, while solid lines (color:red) are those with paused ramp profiles explained above. Each solid line shows small extraction rates during first constant ramp periods, and there are sudden drops of beam intensities after passing restored tune points, shown with vertical lines (color:purple). The turn-by-turn normalized beam intensities are shown in Fig.~\ref{fig:arrival12}. Ideal normalized intensities should be 1.0, and spill intensities with normal ramp profile are close to ideal one. With paused ramp profile for the arrival time measurements, spill intensities are reduced during constant ramp periods. When sizes of separatrices are significantly small as in last two stages, thicknesses of separatrix changes induced by tune variations are very thin, therefore we observe that spill intensities are not reduced as much in the early stage. For the early stage, this separatrix change is large enough to hold stable particles inside the separatrix, so that extracted particle rates are very small during the constant ramp and there are large bursts of particles after restoring. 
-
-Besides Synergia tracking simulations, we also use the Kobayashi Hamiltonian method to calculate arrival times. By solving equations of the motion in Eq.~(\ref{eqn:motion}) with 4th order Runge-Kutta method, particle's motions are tracked for every three-turn and their arrival times are calculated. For the one-to-one comparison, their initial positions are set same as those of Synergia tracking simulations, however, space charge effects are excluded for simplicity. Effective normalized sextupole strengths are calculated with harmonic sextupole strengths at the second tune stopping points.
-
+Analytical expressions for the arrival time(transit time) in the reference \cite{pullia} were derived based on equations of motion from the Kobayashi Hamiltonian. With these formulas, the transit times were given for either a constant resonance or a slowly varying resonance. However, we realized that it is hard to predict arrival time with approximations used in~\cite{pullia}, especially when particles are close to stable fixed points. Particles' motions are strongly bounded near the stable fixed points, and it takes longer time to escape these points, and therefore, the transit time calculated with analytical expressions easily goes infinity.
 
 \begin{figure*}[!tbp]
   \subfigure[Beam intensities]{
@@ -289,6 +282,12 @@ Besides Synergia tracking simulations, we also use the Kobayashi Hamiltonian met
     \label{fig:arrival12}}
   \caption{\label{fig:arrival1}Arrival Time Measurement Stages. (top:early, middle:middle, and bottom:end}
 \end{figure*}
+
+Synergia tracking simulations are prepared to measure arrival times for extracted particles. 500k macro particles are initially injected and slowly extracted in the Delivery Ring. Other beam and machine parameters are listed in Table[\textcolor{red}{table reference}] The optimal tune-quads ramp profile provides a constant slow spill. At a selected turn, tune-quads ramp are intentionally stopped, and their strengths are kept constant for about $\sim$1\% of the spill duration, roughly $\sim$300 turns. During this first constant ramp period, a small amount of beam could be extracted. After this period, strengths of tune-quads are restored to original settings instantaneously and kept constant again. The second constant period is for about \textcolor{red}{500/1000} turns, which should be enough to observe whole transitions of unstable particles to the septum field region. During the transition, the amount of affected particles are relatively small, so that particles inside the narrow separatrix shell induced by the tune jump are involved, and we measure arrival times for those particle transitions. 
+
+As the separatrix is shrinking by the tune ramp, its distance to the septum field region is getting longer. Therefore, the arrival time depends on the extraction stage, and we choose three different stages for measurement points: early ($\sim$2000 turn), middle ($\sim$15,000 turn), and close to the end ($\sim$25,000 turn). 500k macro particles in the initial beam is large enough to observe a smooth transition distribution for each stage.
+
+Fig.~\ref{fig:arrival11} shows quadrupole strengths vs.~turn for three different stages (top:early, middle:middle, and bottom:end). \textcolor{red}{Dashed} lines (color:blue) are beam intensities with a normal ramp profile, while solid lines (color:red) are those with paused ramp profiles explained above. Each solid line shows small extraction rates during first constant ramp periods, and there are sudden drops of beam intensities after passing restored tune points, shown with vertical lines (color:purple). The turn-by-turn normalized beam intensities are shown in Fig.~\ref{fig:arrival12}. Ideal normalized intensities should be 1.0, and spill intensities with normal ramp profile are close to the ideal one. With a paused ramp profile for the arrival time measurements, spill intensities are reduced during constant ramp periods. Since sizes of separatrices are relatively small in last two stages, thicknesses of separatrix changes induced by tune variations are very thin, therefore we observe that spill intensities are not reduced as much in the early stage. For the early stage, this separatrix change is large enough to hold many unstable particles inside the separatrix, so that extracted particle rates are very small during the constant ramp and there are large bursts of particles after restoring. 
 
 \begin{figure*}[!tbp]
   \subfigure[Turn 2,000]{
@@ -303,7 +302,15 @@ Besides Synergia tracking simulations, we also use the Kobayashi Hamiltonian met
   \caption{\label{fig:arrival2}Arrival Time Distributions. (left:early, middle:middle, and right:end)}
 \end{figure*}
 
+Besides Synergia tracking simulations, we also track particles' motions with the Kobayashi Hamiltonian method to calculate arrival times. By solving equations of the motion in Eq.~(\ref{eqn:motion}) with 4th order Runge-Kutta (RK4) method, particle's motions are tracked for every three-turn and their arrival times are calculated. For the one-to-one comparison, their initial positions are set same as those of Synergia tracking simulations, however, space charge effects are excluded for simplicity reasons. Effective normalized sextupole strengths are calculated with harmonic sextupole strengths at the second tune stopping points.
 
+In Fig.~\ref{fig:arrival2}, arrvial time profiles of particlses are plotted as a function of their initial positions. Each dot represents an individual particles with Syneriga (\textcolor{red}{triangle}, blue) and RK4 (\textcolor{red}{circle}, red) methods. Attached plots on top and right are histograms of their distributions. The left vertical line is the septum foil position, and the right one indicates the $x$ coordinates of the leftmost unstable fixed point. 
+
+When particles are sitting on or slightly off the outgoing separatrix branch, arrival times are almost same for two methods. However, there are large offsets between two methods, if particles' initial positions are near the side of the separatrix triangle. Speed of the transit time varies particles' distance from the separatrix line. In other words, the arrival time is inversely propotional to the distance between particle and separatrix. This is predicted in M.~Pullia's analytical expressions, too. In the RK4 method, we also exclude space charge effects, which shake particle's motions and eventually varies distance to the separatrix. Conseqently, these effects make particles travel more time to reach the septum field region. Moreover, both cases have relatively large arrival times near the unstable fixed point, shown with large peaks in the upper historgram plots. Since particles starting near this point are strongly bounded by restoring forces, escape times are longer than other initial positions. 
+
+
+
+\clearpage
 \subsection{\label{sec:beamloss}Beam Loss Tracking}
 
 \textcolor{blue}{structure II}
@@ -318,7 +325,7 @@ Besides Synergia tracking simulations, we also use the Kobayashi Hamiltonian met
 \end{itemize}
 
 
-After a bunch of particles enters a electrostatic septum element, a few particles will be have a chance scattered by a septum foil.
+After a bunch of particles enters a electrostatic septum element, a few particles will be have a chance to be scattered by a septum foil.
 Previous studies show that the chance are approximately $< 2 \%$. Synergia handle these particles as a beamloss. 
 
 %TODO
@@ -372,8 +379,6 @@ the Debuncher,'' Technical Report, Fermilab, 2009. FERMILAB-FN-0842-APC-CD.
   M. Pullia, thesis
 \end{thebibliography}
 
-
-\clearpage
 
 \end{document}
 
