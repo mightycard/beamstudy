@@ -313,20 +313,28 @@ When particles are sitting on or slightly off the outgoing separatrix branch, ar
 \clearpage
 \subsection{\label{sec:beamloss}Beam Loss Tracking}
 
-\textcolor{blue}{structure II}
-\begin{itemize}
-  \item motivation: brief description of septum alignment and beam loss mechanism
-  \item what we do (beam loss tracking)
-  \item simulation procedure: Synergia $\rightarrow$ mars $\rightarrow$ synergia
-  \item simulation results I: phasespace plot for 0, 1, 2, 3 turns
-  \item analytical calculation description
-  \item analytical calculation results
-  \item conclusion: analysis
-\end{itemize}
+In slow resonant extraction, unstable particles outside the separatrix are separted from the circulating beam and streaming through the separatrix branches. When these particles are entering the septum field region, they are kicked by electrostatic fields biased between septum foils and cathode. For the Mu2e experiment, two septa are placed with 50~$\mu$m thickness foils. Due to the finite thickness and width of foils, some particles have chances to hit these foils and scatter throughout the beamline. In order to reduce these hitting rates, we adopt many techniques. such as septum foil plane rotation, dynamic bumps, and diffusers. Synergia tracking studies predicted that these chances are approximately $< 2 \%$. 
+
+Synergia has capability of filtering these particles at the entrance of the septum, and handles as beam losses. In the real machine, particles could cross a gap between two foils, or be scatterd by foils. If these particles enter into the field free region, they will circulate with the existing circulating beam. In case of going into the septum field region, they will be partially kicked by the electrostatic fields. Some particles could be survived by scattering, however, most of them will hit the beam pipe and gernerate very hazardous radioactivities.
 
 
-After a bunch of particles enters a electrostatic septum element, a few particles will be have a chance to be scattered by a septum foil.
-Previous studies show that the chance are approximately $< 2 \%$. Synergia handle these particles as a beamloss. 
+
+
+
+
+\begin{figure*}[!tbp]
+  \subfigure[Synergia Tracking Results]{
+    \includegraphics[width=.45\textwidth]{img/fig_beamloss1a}
+    \label{fig:beamloss11}}
+  \subfigure[RK4 Tracking Results]{
+    \includegraphics[width=.45\textwidth]{img/fig_beamloss1b}
+    \label{fig:beamloss12}}
+  \caption{\label{fig:beamloss1}Turn-by-turn tracking results for scattered particles at the entrance of the first septum.}
+\end{figure*}
+
+
+
+
 
 %TODO
 %MARS parameters
