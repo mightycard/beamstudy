@@ -315,25 +315,38 @@ When particles are sitting on or slightly off the outgoing separatrix branch, ar
 
 In slow resonant extraction, unstable particles outside the separatrix are separted from the circulating beam and streaming through the separatrix branches. When these particles are entering the septum field region, they are kicked by electrostatic fields biased between septum foils and cathode. For the Mu2e experiment, two septa are placed with 50~$\mu$m thickness foils. Due to the finite thickness and width of foils, some particles have chances to hit these foils and scatter throughout the beamline. In order to reduce these hitting rates, we adopt many techniques. such as septum foil plane rotation, dynamic bumps, and diffusers. Synergia tracking studies predicted that these chances are approximately $< 2 \%$. 
 
-Synergia has capability of filtering these particles at the entrance of the septum, and handles as beam losses. In the real machine, particles could cross a gap between two foils, or be scatterd by foils. If these particles enter into the field free region, they will circulate with the existing circulating beam. In case of going into the septum field region, they will be partially kicked by the electrostatic fields. Some particles could be survived by scattering, however, most of them will hit the beam pipe and gernerate very hazardous radioactivities.
+Synergia has capability of filtering these particles at the entrance of the septum, and handles as beam losses. That is, it does not track scattered particles inside and after septum elements. In the real machine, particles could cross a gap between two foils, or be scatterd by foils. If these particles go back into the field free region, they will circulate with the existing circulating beam, again. In case of entering into the septum field region, they will be partially kicked by the electrostatic fields. Of these scattered particles, some could be survived by scattering, however, most of them will hit a beam pipe somewhere around the ring and gernerate very hazardous radioactivities.
+
+In order to observe motions of scattered particles, we use the MARS code in conjuction with Synergia~\cite{mars1}. MARS is a Monte Carlo code with capabilities of hardronic and electromagnetic cascades for particles in accelerators, detectors, spacecrafts, etc~\cite{mars2}. Fig.~\ref{fig:beamloss1} shows a beam tracking with the MARS code through the extraction channel in the Delivery Ring. The extraction channel consists of two electrostatic septa (ESS1 and ESS2), a Lambertson magnet (ELAM), and two quadrupoles (Q203 and Q204). Two main streams with black traces representing protons are circulating (upper) and outgoing (lower) particles. Outgoing particles will be transported to the C-magnet and extracted. Other colored traces are secondary particles scattered by the septum foils. Circulating and outgoing beams are separated in the first septum, ESS1. At ESS2, their separation is large enough to have no losses. 
+
+\begin{figure*}[!tbp]
+  \includegraphics[width=3.2in]{img/fig_beamloss1}
+  \caption{\label{fig:beamloss1} Plan view for the MARS tracking in the extraction channel. Main lattice elements aremarked with labels. Only extracted beam and a small fraction of the circulating beam are shown. Black traces show protons, secondary particles are shown in other colors.}
+\end{figure*}
+
+In Synergia multi-particle tracking simulations, a specialized aperture at the entrance of the first septum is applied to filter out lost particles. This aperture consists of two parts: 1) determine particle hits to the first foil head or other septum components at the entrance, and 2) calculate particle trajectories insde the septum to check their crossing the septum plane. These filtered particles are prepared as an input of MARS tracking simulations. In MARS simulations, filtered particles are tracked through the extraction channel from the first septum (ESS1) to the C-magnet. Each septum has detailed geometries of foil configurations, such as foil thickness, width, separation, material, etc. Therefore, particles cascade motions can be tracked in detail. Then, the second Synergia tracking simulations perform with particles from the MARS output starting at the C-magnet. 
+
+Fig.~\ref{fig:beamloss21} shows turn-by-turn tracking results for scattered particles at the entrance of the first septum in normalized phasespace coordinates. Particles (color:blue) along with the vertical line (color:purple) at -11~mm are input sample particles from MARS results. Their original measured locations are at the C-magnet, but we traced them back to the septum just for the comparison. Particles after 1, 2, and 3 revolutions are plotted on the bottom, right, and left, respectively. After 3 turns, most of survived particles are inside the septum field region. Fig.~\ref{fig:beamloss22} shows where scattered particles are lost inside the ring. Black line represents the beamline of the Delivery Ring. This plot shows that beam losses are occured mostly at septa elements, first arc section, and middles of each straight section. From simulations results, about \~43\% particles are lost, while other particles are survied and extracted. 
 
 
-
-
+There are interesting points 
 
 
 \begin{figure*}[!tbp]
   \subfigure[Synergia Tracking Results]{
-    \includegraphics[width=.45\textwidth]{img/fig_beamloss1a}
-    \label{fig:beamloss11}}
-  \subfigure[RK4 Tracking Results]{
-    \includegraphics[width=.45\textwidth]{img/fig_beamloss1b}
-    \label{fig:beamloss12}}
-  \caption{\label{fig:beamloss1}Turn-by-turn tracking results for scattered particles at the entrance of the first septum.}
+    \includegraphics[width=.45\textwidth]{img/fig_beamloss2a}
+    \label{fig:beamloss21}}
+  \subfigure[Beam loss locations]{
+    \includegraphics[width=.45\textwidth]{img/fig_beamloss2b}
+    \label{fig:beamloss22}}
+  \caption{\label{fig:beamloss2}Synergia tracking results for scattered particles at the entrance of the first septum: a) turn-by-turn results with normalized phasespace coordinates, b) beam loss locations.}
 \end{figure*}
 
 
-
+\begin{figure*}[!tbp]
+  \includegraphics[width=3.2in]{img/fig_beamloss3}
+  \caption{\label{fig:beamloss3} RK4 tracking results.}
+\end{figure*}
 
 
 %TODO
@@ -385,6 +398,14 @@ the Debuncher,'' Technical Report, Fermilab, 2009. FERMILAB-FN-0842-APC-CD.
 
   \bibitem{pullia}
   M. Pullia, thesis
+
+  \bibitem{mars1}
+  V. Nagaslaev, MARS simulations for Mu2e resonant extraction, in preparation
+
+  \bibitem{mars2}
+  N.V. Mokhov, Recent Mars15 developments: nuclide inventory, DPA and gas production ,Fermilab-Conf-10-518-APC (2010)
+
+.
 \end{thebibliography}
 
 
