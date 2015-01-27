@@ -74,12 +74,12 @@ Most of medical accelerators for the cancer therapy using slow resonant extracti
 
 For the slow resonant extraction methods, one of the most important parts is to maintain stable spills during the entire extraction. With the help of optimal tune-ramp profile and RFKO feedback system, multi-particle tracking simulations using Synergia2 showed \mbox{$\pm 20\%$} variations in spill structures~\cite{mu2e}. However, it is quite possible to have unwanted spill fluctuations in the presences of magnet imperfections or magnet power supply ripples. Moreover, the RFKO feedback system to regulate the spill rate for the Mu2e experiment requires precise predictions of those fluctuations. To understand the spill structure, we measure the arrival time profile of unstable particles during the transition from the outside the separatrix to the septum field region. The measurements are done with tracking simulations using Synergia2 as well as the simplified resonant model using the Kobayashi Hamiltonian method.
 
-In order to locate beam loss locations inside the ring, Synergia2 first applied various apertures in the beamline. These aperture show that most dominant beam losses are occurred at the extraction channel. However, more precise investigation are needed to understand their loss mechanism. And we carried out the detailed particle transportation studies inside the extraction channel using the MARS simulation code. The MARS code is capable of including various types of particle inteactions with beamline materials as well as the tracking of secondary particles. With the help of the MARS simulations, Synergia2 tracking simulations are performed to track secondary particles. The analytical tracking simulations are also prepared to understand behaviors of these scattered particles. 
+In order to locate beam loss locations inside the ring, Synergia2 first applied various apertures in the beamline. These aperture show that most dominant beam losses are occurred at the extraction channel. However, more precise investigation are needed to understand their loss mechanism. And we carried out the detailed particle transportation studies inside the extraction channel using the MARS simulation code. The MARS code is capable of including various types of particle interactions with beamline materials as well as the tracking of secondary particles. With the help of the MARS simulations, Synergia2 tracking simulations are performed to track secondary particles. The analytical tracking simulations are also prepared to understand behaviors of these scattered particles. 
 
-\subsection{RFKO Beam Heating}
+%\subsection{RFKO Beam Heating}
 
 
-Sec.~\ref{sec:bump} discusses local orbit corrections with dynamic bumps. In Sec.~\ref{sec:tracking}, arrival time profile measurements and scattered particle tracking simulations are presented using Synergia2. Tracking simulations with simplified resonance model using the Kobayashi Hamiltonian method are also compared. Sec.~\ref{sec:rfko} describes particles' motions under the influence of RFKO beam heating.
+Sec.~\ref{sec:bump} discusses local orbit corrections with dynamic bumps. In Sec.~\ref{sec:tracking}, arrival time profile measurements and scattered particle tracking simulations are presented using Synergia2. Tracking simulations with simplified resonance model using the Kobayashi Hamiltonian method are also compared. %Sec.~\ref{sec:rfko} describes particles' motions under the influence of RFKO beam heating.
 
 
 \section{\label{sec:bump}Local Orbit Corrections with Dynamic Bumps}
@@ -317,24 +317,25 @@ In Fig.~\ref{fig:beamloss21}, we observe that distributions of scattering partic
 
 
 
-\section{\label{sec:rfko}Particle Motions with RFKO Beam Heating}
-
-\subsection{\label{sec:dist}Beam Distribution Function}
-
-\subsection{\label{sec:emit}Emittance Growth Rates}
-
-
+% \section{\label{sec:rfko}Particle Motions with RFKO Beam Heating}
+% 
+% \subsection{\label{sec:dist}Beam Distribution Function}
+% 
+% \subsection{\label{sec:emit}Emittance Growth Rates}
 
 
 
-\clearpage
+
 \section{\label{sec:conclusion}Conclusion}
 
-In this paper, we have demonstrated beam dynamics simulations of third-integer resonant extraction for the Mu2e experiment at Fermilab. We employ a dynamical orbit corrections to provide a small entrance angle of extracted beam to the septum plane. 
+In this paper, we have demonstrated beam dynamics simulations of third-integer resonant extraction for the Mu2e experiment at Fermilab. We implemented dynamical orbit corrections to provide a small entrance angle of extracted beam to the septum plane. Angular spread of extracted particles are well aligned to the septum foil plane by applying angle corrections with dynamic bumps, and these reduced more beam losses at septa. In order to understand the spill structure, the arrival time profile measurements are investigated. Synergia2 simulations showed 
 
 
 
-Moreover, RFKO Beam Heating
+
+
+
+%Moreover, RFKO Beam Heating
 
 
 
@@ -342,13 +343,8 @@ Moreover, RFKO Beam Heating
 
 This work was supported by the United States Department of Energy under contract DE-AC02-07CH11359 and the ComPASS project funded through the Scientific Discovery through Advanced Computing program in the DOE Office of High Energy Physics.
 
-% \appendix
-% \section{\label{sec:shadow}The Septum Shadow Region}
-% \subsection{Outside the Septum Field Region}
-% \subsection{Inside the Septum Field Region}
 
 \begin{thebibliography}{77}
- %\include{beamstudy.bbl}
   \bibitem{tdr}
   Mu2e Technical Design Report, http://arxiv.org/abs/1501.05241.
 
@@ -380,7 +376,7 @@ This work was supported by the United States Department of Energy under contract
   \bibitem{mars2}
   N.V. Mokhov, ``Recent Mars15 Developments: Nuclide Inventory, DPA and Gas Production,'' Fermilab-Conf-10-518-APC (2010).
 
-.
+
 \end{thebibliography}
 
 
