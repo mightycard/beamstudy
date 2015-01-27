@@ -41,13 +41,9 @@ We present beam dynamics simulation studies for third-integer resonant extractio
 
 \section{\label{sec:intro}Introduction}
 
-For the Mu2e experiment at Fermilab, the slow resonant extraction method provides proton pulses from the Delivery Ring to the production target system~\cite{tdr}. Using the accelerator simulation package, Synergia2, we have performed resonant extraction simulations, and results are discussed in~\cite{mu2e}. The main goal of beam dynamics simulations is to demonstrate third-integer resonant extraction of proton beams with stable spill structure. The third-integer resonance is excited with the harmonic sextupoles, and slow spills are generalized by ramp tune-qaud strengths. 
-Talbe~\ref{table:param} shows beam and machine parameters we have used in this paper for the Mu2e resonant extraction simulations. 
-
-To meet the extraction beam requirements, we adopt a pice-wise ramp profile, septum plane rotaions, and RFKO feedback system, described in the reference~\cite{mu2e}. 
+For the Mu2e experiment at Fermilab, the slow resonant extraction method provides proton pulses from the Delivery Ring to the production target system~\cite{tdr}. Using the accelerator simulation package, Synergia2, we have performed resonant extraction simulations, and results are discussed in~\cite{mu2e}. The main goal of beam dynamics simulations is to demonstrate third-integer resonant extraction of proton beams with a stable spill structure. The third-integer resonance is excited with the harmonic sextupoles, and slow spills are generalized by tune-quad ramp. Table~\ref{table:param} shows beam and machine parameters we have used in this paper for the Mu2e resonant extraction simulations. To meet the extraction beam requirements, we adopt a piece-wise ramp profile, septum plane rotations, and RFKO feedback system, described in the reference~\cite{mu2e}. In this study, we present particle tracking simulation results to optimize the spill structure during slow resonant extraction. 
 
 \begin{table*}[!bp]
- %\begin{center}
     \begin{tabular}{rrr}
     \hline
      Parameters                & Value              & Units         \\
@@ -70,10 +66,27 @@ To meet the extraction beam requirements, we adopt a pice-wise ramp profile, sep
     \hline
     \end{tabular}
     \caption{\label{table:param}Beam and Machine Parameters}
-  %\end{center}
 \end{table*}
 
-Sec.~\ref{sec:bump} discusses local orbit corrections with dynamic bumps. In Sec.~\ref{sec:tracking}, arrival time profile measurements and scattered particle tracking simulations are presented using Synergia2. Tracking simulations with analytical equations of motion using the Kobayshi Hamiltonian method are also compared. Sec.~\ref{sec:rfko} describes particles' motions under the influence of RFKO beam heating.
+\subsection{Dynamic Bump}
+
+
+
+
+\subsection{Particle tracking with simplified resonance model}
+
+
+
+
+
+\subsection{RFKO beam heating}
+
+
+
+
+
+
+Sec.~\ref{sec:bump} discusses local orbit corrections with dynamic bumps. In Sec.~\ref{sec:tracking}, arrival time profile measurements and scattered particle tracking simulations are presented using Synergia2. Tracking simulations with analytical equations of motion using the Kobayashi Hamiltonian method are also compared. Sec.~\ref{sec:rfko} describes particles' motions under the influence of RFKO beam heating.
 
 
 \clearpage
@@ -81,11 +94,8 @@ Sec.~\ref{sec:bump} discusses local orbit corrections with dynamic bumps. In Sec
 
 \subsection{\label{sec:bump0}Septum Entrance Angle}
 
-In the previous paper~\cite{mu2e}, we discussed that a septum foil plane should be aligned with particles' entrance angles to the septum.
-This alignment of the septum foil plane should be optimized in the manner of reducing particle losses due to crossing the plane from outside to inside a septum field region or vice versa.
-In the Delivery Ring, however, the septum is placed at a zero dispersion section, and all shrinking separatrices are always centered at origin during extraction.
-These yield that the Hardt condition, a condition to arrange separatrix geometries by superimposing them for different momenta, cannot be fulfilled~\cite{pullia}.
-Consequently, particles' angle coordinates at the entrance of the first septum are not aligned with a fixed septum foil plane.
+In the previous paper~\cite{mu2e}, we discussed that a septum foil plane should be aligned with particles' entrance angles to the septum. This alignment of the septum foil plane should be optimized in the manner of reducing particle losses due to crossing the plane from outside to inside a septum field region or vice versa. In the Delivery Ring, however, the septum is placed at a zero dispersion section, and all shrinking separatrices are always centered at origin during extraction. These yield that the Hardt condition, a condition to arrange separatrix geometries by superimposing them for different momenta, cannot be 
+applied to our case. Consequently, particles' angle coordinates at the entrance of the first septum are not aligned with a fixed septum foil plane by manipulating dispersion at the septum.
 
 \begin{figure*}[!tbp]
   \subfigure[Before applying dynamic bumps]{
@@ -97,31 +107,12 @@ Consequently, particles' angle coordinates at the entrance of the first septum a
   \caption{\label{fig:bump0}Phase space plots of particles for 4 different extraction stages (turns 100(blue), 6000(red), 20000(yellow), and 30000(cyan)): (a) before and (b) after applying dynamic bump corrections. (Color: Red shaded part is the septum field region, and gray shaded one is the septum shadow regions.)}
 \end{figure*}
 
-Fig.~\ref{fig:bump00} shows a phase space of particles for four different extraction stages (turns 100, 6,000, 20,000, and 30,000).
-As separatrix is squeezed by increasing tune-quad strengths, unstable particles are streamed along branches of separatrices. 
-The septum field region (color: red shaded) is formed on the [left] side of the vertical septum foil line (color: purple) at $x=10$~mm. 
-Gray shaded regions on the plot are defined as septum shadow regions in which particles will be considered as lost.
-%The detailed explanation of the septum shadow regions is in Appendix~\ref{sec:shadow}.
-Streams of unstable particles on the [leftmost] separatrix branch for each extraction stage are entering the septum field region by crossing the septum foil line.
-However, their entering angles are moving [upward] during the extraction processes.
-An angle of the septum foil plane is aligned with an initial extraction stage.
-, the alignment is only valid for few turns at the beginning, and there will be continuous misalignment of the septum foil plane later.
-These result that more particles are entering the [upper] septum shadow region (color:gray shaded), and they will be lost eventually.
+Fig.~\ref{fig:bump00} shows a phase space of particles for four different extraction stages (turns 100, 6,000, 20,000, and 30,000). As separatrix is squeezed by increasing tune-quad strengths, unstable particles are streamed along branches of separatrices. The septum field region (color: red shaded) is formed on the [left] side of the vertical septum foil line (color: purple) at $x=10$~mm. Gray shaded regions on the plot are defined as septum shadow regions in which particles will be considered as lost. Streams of unstable particles on the [leftmost] separatrix branch for each extraction stage are entering the septum field region by crossing the septum foil line. However, their entering angles are moving [upward] during the extraction processes. An angle of the septum foil plane is aligned with an initial extraction stage. The alignment is only valid for few turns at the beginning, and there will be continuous misalignment of the septum foil plane later. These result that more particles are entering the [upper] septum shadow region (color:gray shaded), and they will be lost eventually.
 Variations of angle coordinates at the septum entrance will be seen at the experiment target with a large horizontal angular spread of extracted beams.
 
-In our case with the septum at a zero dispersion section, two possible ways can be considered to have same entrance angles of particles to the septum for different extraction stages.
-The first method is to compensate the beam angle by rotating separatrices. This could be achievable by changing phases of two harmonic sextupole circuits.
-The phase contributions of each harmonic circuit differs by about 90 deg, and these make phase adjustments doable.
-However, particles' entrance angles for different extraction stages are same only if their $x$ coordinates are equal to the horizontal position of the septum foil at the entrance, $x_{ES}$.
-In other words, their angles beyond $x_{ES}$ will be diverged.
-These yield an asymmetric angular spread of extracted beams.
+In our case with the septum at a zero dispersion section, two possible ways can be considered to have same entrance angles of particles to the septum for different extraction stages. The first method is to compensate the beam angle by rotating separatrices. This could be achievable by changing phases of two harmonic sextupole circuits. The phase contributions of each harmonic circuit differs by about 90 deg, and these make phase adjustments doable. However, particles' entrance angles for different extraction stages are same only if their $x$ coordinates are equal to the horizontal position of the septum foil at the entrance, $x_{ES}$. In other words, their angles beyond $x_{ES}$ will be diverged. These yield an asymmetric angular spread of extracted beams.
 
-The other solution is to apply local orbit corrections using angle bumps throughout the spill.
-Extracted particles will have a symmetric angular spread during the spill as well as same entrance angles.
-For resonant extraction from the Delivery ring, we chose a local orbit correction scheme.
-Particles' orbits in the extraction beamline will be dynamically corrected with four bump magnets.
-As a backup solution to prepare a failure of local bump corrections, the harmonics sextupole magnets and their power supplies are designed to preserve ramp capabilities.
-In this paper, we will only discuss how local bump corrections are implemented, and detailed specifications for magnets and power supplies are presented in the Mu2e TDR~\cite{tdr}.
+The other solution is to apply local orbit corrections using angle bumps throughout the spill. Extracted particles will have a symmetric angular spread during the spill as well as same entrance angles. For resonant extraction from the Delivery ring, we chose a local orbit correction scheme. Particles' orbits in the extraction beamline will be dynamically corrected with four bump magnets. As a backup solution to prepare a failure of local bump corrections, the harmonics sextupole magnets and their power supplies are designed to preserve ramp capabilities. In this paper, we will only discuss how local bump corrections are implemented, and detailed specifications for magnets and power supplies are presented in the Mu2e TDR~\cite{tdr}.
 
 \subsection{\label{sec:bump1}Dynamic Bumps}
 
@@ -130,17 +121,10 @@ In this paper, we will only discuss how local bump corrections are implemented, 
   \caption{\label{fig:bump1}Schematic drawing of the external beamline with four local orbit bumps.}
 \end{figure}
 
-Using four dynamic bumps, we could align separatrices to reduce angular deviations at the entrance of the septum.
-Fig.~\ref{fig:bump1} is a schematic drawing of four dynamic bump locations in the extraction beamline.
-Two bumps are located at the upstream of septa, and the other two are at the downstream.
-Upstream bumps kick particles so that bases of separatrices are aligned during an entire extraction period.
-Then, downstream bumps will kick them back to original orbits.
-Fig.~\ref{fig:bump01} presents a phase space plot of particles for different extraction stages after applying local orbit corrections.
-All triangular distributions of particles are well aligned on their bases.
+Using four dynamic bumps, we could align separatrices to reduce angular deviations at the entrance of the septum. Fig.~\ref{fig:bump1} is a schematic drawing of four dynamic bump locations in the extraction beamline. Two bumps are located at the upstream of septa, and the other two are at the downstream. Upstream bumps kick particles so that bases of separatrices are aligned during an entire extraction period. Then, downstream bumps will kick them back to original orbits. Fig.~\ref{fig:bump01} presents a phase space plot of particles for different extraction stages after applying local orbit corrections. All triangular distributions of particles are well aligned on their bases.
 The [leftmost] branch arms are extended to the same direction, i.e., particles are entering the septum field region with same angular extensions.
 
-Strengths of local orbit corrections can be easily obtained by applying a transfer matrix method with initial closed orbit conditions.
-With the condition that the closed orbit is zero outside bumps, their strengths in time, $\theta_{i}(t)$ for $i=1,2,3,4$, are given by
+Strengths of local orbit corrections can be easily obtained by applying a transfer matrix method with initial closed orbit conditions. With the condition that the closed orbit is zero outside bumps, their strengths in time, $\theta_{i}(t)$ for $i=1,2,3,4$, are given by
 \begin{equation}
   \begin{split}
   \theta_{1}(t) & = - \sqrt{\frac{\beta_{s}}{\beta_{1}}}
@@ -164,11 +148,7 @@ With the condition that the closed orbit is zero outside bumps, their strengths 
   \end{split}
   \label{eqn:bump}
 \end{equation}
-where $\beta_{i}$'s are betatron functions at septum($s$) and bumps($1,2,3,4$), $\psi_{i}$'s are betatron phase advances, and $\Delta x^{\prime}_{s} (t)$ is required angle kick of particles at the septum entrance as a function of time.
-Fig.~\ref{fig:bump2} shows changes of bump strengths vs.~time.
-Since particles' entrance angles to the septum are aligned to the initial extraction stage, bump strengths are zero at the beginning and are maximum at the end of extraction.
-From Eq.(~\ref{eqn:bump}), we observed that strengths of bump magnets would be getting smaller, when the distance of each pair for upstream and downstream bumps are closer.
-Since each magnet is bounded between two quadrupoles, there are limitations in minimizing their strengths.
+where $\beta_{i}$'s are betatron functions at septum($s$) and bumps($1,2,3,4$), $\psi_{i}$'s are betatron phase advances, and $\Delta x^{\prime}_{s} (t)$ is required angle kick of particles at the septum entrance as a function of time. Fig.~\ref{fig:bump2} shows changes of bump strengths vs.~time. Since particles' entrance angles to the septum are aligned to the initial extraction stage, bump strengths are zero at the beginning and are maximum at the end of extraction. From Eq.(~\ref{eqn:bump}), we observed that strengths of bump magnets would be getting smaller, when the distance of each pair for upstream and downstream bumps are closer. Since each magnet is bounded between two quadrupoles, there are limitations in minimizing their strengths. 
 
 \begin{figure}[!tbp]
   \includegraphics[width=.45\textwidth]{img/fig_bump3}
@@ -177,21 +157,10 @@ Since each magnet is bounded between two quadrupoles, there are limitations in m
 
 \subsection{\label{sec:bump2}Simulation Results}
 
-In Fig.~\ref{fig:bump3}, footprints of extracted particles at the entrance of the first septum are plotted in phase space coordinates.
-These are accumulations of extracted particles with and without local orbit corrections throughout entire extraction period.
-Particles (color: blue) survived from lost or scattered by the septum element will be transferred to the 2nd septum, a Lambertson magnet, and a C-magnet.
-They will be then extracted to the external beamline.
-Particles (color: black) formed a thin line on the [right] hit the septum foil with 50$\mu$m at the entrance during spill.
-Some particles (color: red) intersect the septum foil plane by entering the septum shadow region (color: gray shaded).
-The last two kinds of particles are removed and considered as lost in simulations.
-The horizontal phase space ellipses (color: green), which match the beam with 99.9\% containment, are plotted alongside.
+In Fig.~\ref{fig:bump3}, footprints of extracted particles at the entrance of the first septum are plotted in phase space coordinates. These are accumulations of extracted particles with and without local orbit corrections throughout entire extraction period. Particles (color: blue) survived from lost or scattered by the septum element will be transferred to the 2nd septum, a Lambertson magnet, and a C-magnet. They will be then extracted to the external beamline. Particles (color: black) formed a thin line on the [right] hit the septum foil with 50$\mu$m at the entrance during spill. Some particles (color: red) intersect the septum foil plane by entering the septum shadow region (color: gray shaded). The last two kinds of particles are removed and considered as lost in simulations. The horizontal phase space ellipses (color: green), which match the beam with 99.9\% containment, are plotted alongside.
 
-Before applying local orbit corrections, the footprint has a wider angular spread and there are many beam losses due to crossing the foil plane as seen in Fig.~\ref{fig:bump30}.
-However, Fig.~\ref{fig:bump31} shows a narrower angular thickness of the extracted particle distribution with dynamic orbit corrections.
-The footprint of the extracted beam without dynamic bumps is matched to an unnormalized emittance of [1.26]~$\pi$~mm-mrad and its matching horizontal betatron function is [9.1]~m. The local orbit corrected beam has a [0.55]~$\pi$~mm-mrad emittance and [20.1]~m betatron function.
-After applying local orbit corrections, angular spreads of the beam also depend on the tune spread as the separatrix is squeezed.
-The Delivery Ring has a nonzero chromaticity for the sufficient mixing of the coherent RFKO excitation~\cite{ipac11}.
-Therefore, a chromatic tune spread causes a little spread of angle coordinates as seen in Fig.~\ref{fig:bump31}, while the overall emittance of the corrected beam is smaller compared to that of uncorrected beam.
+Before applying local orbit corrections, the footprint has a wider angular spread and there are many beam losses due to crossing the foil plane as seen in Fig.~\ref{fig:bump30}. However, Fig.~\ref{fig:bump31} shows a narrower angular thickness of the extracted particle distribution with dynamic orbit corrections. The footprint of the extracted beam without dynamic bumps is matched to an unnormalized emittance of [1.26]~$\pi$~mm-mrad and its matching horizontal betatron function is [9.1]~m. The local orbit corrected beam has a [0.55]~$\pi$~mm-mrad emittance and [20.1]~m betatron function. After applying local orbit corrections, angular spreads of the beam also depend on the tune spread as the separatrix is squeezed.
+The Delivery Ring has a nonzero chromaticity for the sufficient mixing of the coherent RFKO excitation~\cite{ipac11}. Therefore, a chromatic tune spread causes a little spread of angle coordinates as seen in Fig.~\ref{fig:bump31}, while the overall emittance of the corrected beam is smaller compared to that of uncorrected beam.
 
 \begin{figure*}[!tbp]
   \subfigure[Before applying dynamic bumps]{
@@ -203,17 +172,10 @@ Therefore, a chromatic tune spread causes a little spread of angle coordinates a
   \caption{\label{fig:bump3}Footprints of extracted particles with and without dynamic bumps. (Color: Blue dots are to-be-extracted particles, red dots are lost particles by intersecting the septum foil plane, and black dots are lost particles by hitting the septum. Red shaded part is the septum field region, and gray shaded one is the septum shadow regions.)}
 \end{figure*}
 
-As described in the previous paper~\cite{mu2e}, Synergia2 has a septum aperture to detect particle losses by hitting a septum head or crossing a septum foil plane.
-The rotation of the septum plane is taken into account in the model.
-Fig.~\ref{fig:bump4} shows extraction simulation results of particle losses with and without local orbit corrections during the spill.
-While ``hit\_septum1'' and ``hit\_septum2'' are losses by hitting entrances of septum elements, ``cross\_septum1'' and ``cross\_septum2'' are losses by crossing septum foil planes for the 1st and 2nd septa, respectively.
-``total\_losses'' are a sum of turn-by-turn particle losses for each turn.
+As described in the previous paper~\cite{mu2e}, Synergia2 has a septum aperture to detect particle losses by hitting a septum head or crossing a septum foil plane. The rotation of the septum plane is taken into account in the model. Fig.~\ref{fig:bump4} shows extraction simulation results of particle losses with and without local orbit corrections during the spill.
+While ``hit\_septum1'' and ``hit\_septum2'' are losses by hitting entrances of septum elements, ``cross\_septum1'' and ``cross\_septum2'' are losses by crossing septum foil planes for the 1st and 2nd septa, respectively. ``total\_losses'' are a sum of turn-by-turn particle losses for each turn.
 
-Without dynamic angle corrections, septum planes are aligned only to the beginning of the extraction stage.
-Therefore, beam losses are rising in time due to mismatching of the alignment (see Fig.~\ref{fig:bump40}).
-When dynamic bumps correct beam orbits, particles' entrance angles are well matched to septum foil planes.
-In Fig~\ref{fig:bump41}, turn-by-turn particle losses are not changing much and are much smaller compared with no orbit corrections.
-We also observed that losses at the 2nd septum with dynamic bumps are decreased.
+Without dynamic angle corrections, septum planes are aligned only to the beginning of the extraction stage. Therefore, beam losses are rising in time due to mismatching of the alignment (see Fig.~\ref{fig:bump40}). When dynamic bumps correct beam orbits, particles' entrance angles are well matched to septum foil planes. In Fig~\ref{fig:bump41}, turn-by-turn particle losses are not changing much and are much smaller compared with no orbit corrections. We also observed that losses at the 2nd septum with dynamic bumps are decreased.
 
 \begin{figure*}[!tbp]
   \subfigure[Before applying dynamic bumps]{
@@ -266,7 +228,6 @@ where $\epsilon = 6\pi \Delta \nu$, and a normalized sextupole strength, $S = 12
 
 The Kobayashi Hamiltonian describes motions of particles in the phase space coordinates for every three turn~\cite{kobayashi}.
 The first term of $H_{K}$ prescribes the unperturbed linear motion of particles, and their motions are described as circles in the normalized phase space. For Mu2e resonant extraction, $\Delta \nu = \nu_{x} - 29/3$, thus the machine tune is set to below resonance. This yields that particles inside the separatrix are rotating counterclockwise direction. The second term contributes the perturbed motion of particles associated with harmonic sextupoles. Due to this term, stable particles are bounded by the triangular separatrix, while unstable particles are streaming away along the outgoing separatrix branches. 
-% discussions about the Kobayashi Hamiltonian can be found in references~\cite{pullia}.
 
 With Eq.~(\ref{eqn:kobayashi}), equations of motion are given by
 \begin{equation}
@@ -278,15 +239,6 @@ With Eq.~(\ref{eqn:kobayashi}), equations of motion are given by
                     \right), \\
   \frac{dX^{\prime}}{dt} & = - \frac{\partial H_{K}}{\partial X}
                            = - \epsilon X - \frac{3}{2} S X X^{\prime}.
-%   \frac{dX}{dt} & = \frac{\partial H_{K}}{\partial X^{\prime}}
-%                   = \frac{3}{4} S
-%                     \left(
-%                       X^{2} + \frac{4}{3} \frac{\epsilon}{S} X^{\prime}
-%                     - X^{\prime 2}
-%                     \right), \\
-%   \frac{dX^{\prime}}{dt} & = - \frac{\partial H_{K}}{\partial X}
-%                            = - \frac{3}{2} S \left( X^{\prime}
-%                             + \frac{2}{3} \frac{\epsilon}{S} \right) X.
  \end{split}
 \label{eqn:motion}
 \end{equation}
