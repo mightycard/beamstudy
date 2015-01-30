@@ -17,7 +17,7 @@
 \usepackage{moreverb}
 
 
-\linespread{1.0}
+%\linespread{1.0}
 
 \makeatletter
 
@@ -76,10 +76,9 @@ For the slow resonant extraction methods, one of the most important parts is to 
 
 In order to locate beam loss locations inside the ring, Synergia2 first applied various apertures in the beamline. These aperture show that most dominant beam losses are occurred at the extraction channel. However, more precise investigation are needed to understand their loss mechanism. And we carried out the detailed particle transportation studies inside the extraction channel using the MARS simulation code. The MARS code is capable of including various types of particle interactions with beamline materials as well as the tracking of secondary particles. With the help of the MARS simulations, Synergia2 tracking simulations are performed to track secondary particles. The analytical tracking simulations are also prepared to understand behaviors of these scattered particles. 
 
-%\subsection{RFKO Beam Heating}
+Beside dynamic tune-quad ramps for bringing the particle's tune to the resonance, the RFKO beam heating is also implemented to assist the spill regulation. The effects of the RFKO frequency and its bandwidth with the beam tune spread were studied and reported previously in~\cite{ipac11}. In this paper, we will show the importance of the chromaticity induced tune spread in emittance growth and action distributions of the beam.
 
-
-Sec.~\ref{sec:bump} discusses local orbit corrections with dynamic bumps. In Sec.~\ref{sec:tracking}, arrival time profile measurements and scattered particle tracking simulations are presented using Synergia2. Tracking simulations with simplified resonance model using the Kobayashi Hamiltonian method are also compared. %Sec.~\ref{sec:rfko} describes particles' motions under the influence of RFKO beam heating.
+Outline of this paper is as follows. Sec.~\ref{sec:bump} discusses local orbit corrections with dynamic bumps. In Sec.~\ref{sec:tracking}, arrival time profile measurements and scattered particle tracking simulations are presented using Synergia2. Tracking simulations with simplified resonance model using the Kobayashi Hamiltonian method are also compared. Sec.~\ref{sec:rfko} presents motions of particles under the influence of the RFKO beam heating.
 
 
 \section{\label{sec:bump}Local Orbit Corrections with Dynamic Bumps}
@@ -285,12 +284,12 @@ In slow resonant extraction, unstable particles outside the separatrix are separ
 
 Synergia2 has capability of filtering these particles at the entrance of the septum, and handles as beam losses. That is, it does not track scattered particles inside and after septum elements. In the real machine, particles could cross a gap between two foils, or be scattered by foils. If these particles go back into the field free region, they will circulate with the existing circulating beam, again. In case of entering into the septum field region, they will be partially kicked by the electrostatic fields. Of these scattered particles, some could be survived by scattering, however, most of them will hit a beam pipe somewhere around the ring and generate very hazardous radio-activities.
 
-In order to observe behaviors of scattered particles, we use the MARS code in conjunction with Synergia2~\cite{mars1}. MARS is a Monte Carlo code with capabilities of hardronic and electromagnetic cascades for particles in accelerators, detectors, spacecrafts, etc~\cite{mars2}. Fig.~\ref{fig:beamloss1} shows a beam tracking with the MARS code through the extraction channel in the Delivery Ring. The extraction channel consists of two electrostatic septa (ESS1 and ESS2), a Lambertson magnet (ELAM), and two quadrupoles (Q203 and Q204). Two main streams with black traces representing protons are circulating (upper) and outgoing (lower) particles. Outgoing particles will be transported to the C-magnet and extracted. Other colored traces are secondary particles scattered by the septum foils. Circulating and outgoing beams are separated in the first septum, ESS1. At ESS2, their separation is large enough to have no losses. 
-
 \begin{figure*}[!tbp]
   \includegraphics[width=3.2in]{img/fig_beamloss1}
   \caption{\label{fig:beamloss1}The MARS tracking results inside the extraction channel.}
 \end{figure*}
+
+In order to observe behaviors of scattered particles, we use the MARS code in conjunction with Synergia2~\cite{mars1}. MARS is a Monte Carlo code with capabilities of hardronic and electromagnetic cascades for particles in accelerators, detectors, spacecrafts, etc~\cite{mars2}. Fig.~\ref{fig:beamloss1} shows a beam tracking with the MARS code through the extraction channel in the Delivery Ring. The extraction channel consists of two electrostatic septa (ESS1 and ESS2), a Lambertson magnet (ELAM), and two quadrupoles (Q203 and Q204). Two main streams with black traces representing protons are circulating (upper) and outgoing (lower) particles. Outgoing particles will be transported to the C-magnet and extracted. Other colored traces are secondary particles scattered by the septum foils. Circulating and outgoing beams are separated in the first septum, ESS1. At ESS2, their separation is large enough to have no losses. 
 
 In Synergia2 multi-particle tracking simulations, a specialized aperture at the entrance of the first septum is applied to filter out lost particles. This aperture consists of two parts: 1) determine particle hittings to the first foil head or other septum components at its entrance, and 2) calculate particle trajectories inside the septum to check their crossings over the septum plane. After applying the septum aperture, the collection of filtered particles are prepared as an input of MARS tracking simulations. In MARS simulations, filtered particles are tracked through the extraction channel from the first septum (ESS1) to the C-magnet. Each septum has detailed geometries of foil configurations, such as foil thickness, width, separations, material properties, etc. Therefore, particles cascade motions can be tracked in detail. Then, the second Synergia2 tracking simulations perform with scattered particles from the MARS output starting at the C-magnet. 
 
@@ -334,8 +333,6 @@ In order to simplify the problem, there are no third-integer resonance excitatio
 
 As predicted, the emittance growth for $C_{x}=0.0$ is significantly low compared to that for $C_{x}=1.0$ (See Fig.~\ref{fig:rfko1a}). A non-zero chromaticity brings a chromatic tune spread, which span the whole beam spread. Therefore, RFKO forces excites the most of particles in the bunch, and induces the emittance growth. Fig.~\ref{fig:rfko1b} presents motions of the beam center for 20,000 turns. Since particles' motions are decoupled from the RFKO beam heating with a zero chromaticity, the beam center is wobbling. On the other hand, beam central motions are well confined near the origin for $C_{x}=1.0$.
 
-In Fig.~\ref{fig:rfko2}, distributions of beam actions are plotted for every 4,000 turns. When an RFKO power is heating with a zero chromaticity, action distributions are staying in a same shape. With a proper frequency spectrum spanning the beam tune spread, however, particles near the center are depopulated by the RFKO heating, and are moving the edge. These motions induce the emittance growth, and consequently particles at the vicinity are transferred to the resonance.
-
 \begin{figure*}[!tbp]
   \subfigure[$C_{x} = 0.0$]{
     \includegraphics[width=.45\textwidth]{img/fig_rfko2a}
@@ -345,6 +342,8 @@ In Fig.~\ref{fig:rfko2}, distributions of beam actions are plotted for every 4,0
     \label{fig:rfko2b}}
   \caption{\label{fig:rfko2}Changes of action distributions ($f(\sqrt{I_{x}}) / \sqrt{I_{x}}$ vs.~$\sqrt{I_{x}}$) for $C_{x} = 0.0$ and $C_{x} = 1.0$.}
 \end{figure*}
+
+In Fig.~\ref{fig:rfko2}, distributions of beam actions are plotted for every 4,000 turns. When an RFKO power is heating with a zero chromaticity, action distributions are staying in a same shape. With a proper frequency spectrum spanning the beam tune spread, however, particles near the center are depopulated by the RFKO heating, and are moving the edge. These motions induce the emittance growth, and consequently particles at the vicinity are transferred to the resonance.
 
 
 \section{\label{sec:conclusion}Conclusion}
